@@ -301,11 +301,8 @@ function Navbar({}: Props) {
                       />
                     </DropdownMenuItem>
                   </Link>
-                  <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
-                    <Link
-                      href="https://www.linkedin.com/in/saiyam-dubey-77a5371b8/"
-                      className="2xl:flex 2xl:justify-between 2xl:items-center"
-                    >
+                  <Link href="https://github.com/saiyamdubey/">
+                    <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
                       Facebook
                       <Image
                         src={"facebook.svg"}
@@ -314,21 +311,27 @@ function Navbar({}: Props) {
                         className="mx-2"
                         alt="fb"
                       />
-                    </Link>
-                  </DropdownMenuItem>
+                    </DropdownMenuItem>
+                  </Link>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
                   <DropdownMenuLabel>Contributors</DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
-                    Shobhit Singh
-                    <h1 className="2xl:text-[20px]">🦁</h1>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
-                    Ayush Singh
-                    <h1 className="2xl:text-[20px]">🚀</h1>
-                  </DropdownMenuItem>
+                  <Link href="https://github.com/theshobhitsingh">
+                    <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                      Shobhit Singh
+                      {/* https://github.com/ayush-singh09 */}
+                      <h1 className="2xl:text-[20px]">🦁</h1>
+                    </DropdownMenuItem>
+                  </Link>
+                  <Link href="https://github.com/ayush-singh09">
+                    <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                      Ayush Singh
+                      {/* https://github.com/theshobhitsingh */}
+                      <h1 className="2xl:text-[20px]">🚀</h1>
+                    </DropdownMenuItem>
+                  </Link>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
