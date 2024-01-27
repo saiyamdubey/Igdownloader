@@ -253,52 +253,87 @@ function Navbar({}: Props) {
                 <DropdownMenuLabel>Social Accounts</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem>
-                    Profile
-                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    Billing
-                    <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    Settings
-                    <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    Keyboard shortcuts
-                    <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+                  <Link href="https://github.com/saiyamdubey/">
+                    <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                      Github
+                      <Image
+                        src={"github1.svg"}
+                        width={25}
+                        height={25}
+                        className="mx-2"
+                        alt="fb"
+                      />
+                    </DropdownMenuItem>
+                  </Link>
+                  <Link href="https://www.linkedin.com/in/saiyam-dubey-77a5371b8/">
+                    <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                      Linkedin
+                      <Image
+                        src={"linkedin.svg"}
+                        width={25}
+                        height={25}
+                        className="mx-2"
+                        alt="fb"
+                      />
+                    </DropdownMenuItem>
+                  </Link>
+                  <Link href="https://github.com/saiyamdubey/">
+                    <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                      Twitter
+                      <Image
+                        src={"twitterbird.svg"}
+                        width={25}
+                        height={25}
+                        className="mx-2"
+                        alt="fb"
+                      />
+                    </DropdownMenuItem>
+                  </Link>
+                  <Link href="https://github.com/saiyamdubey/">
+                    <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                      Instagram
+                      <Image
+                        src={"instagram.svg"}
+                        width={25}
+                        height={25}
+                        className="mx-2"
+                        alt="fb"
+                      />
+                    </DropdownMenuItem>
+                  </Link>
+                  <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                    <Link
+                      href="https://www.linkedin.com/in/saiyam-dubey-77a5371b8/"
+                      className="2xl:flex 2xl:justify-between 2xl:items-center"
+                    >
+                      Facebook
+                      <Image
+                        src={"facebook.svg"}
+                        width={25}
+                        height={25}
+                        className="mx-2"
+                        alt="fb"
+                      />
+                    </Link>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem>Team</DropdownMenuItem>
-                  <DropdownMenuSub>
-                    <DropdownMenuSubTrigger>
-                      Invite users
-                    </DropdownMenuSubTrigger>
-                    <DropdownMenuPortal>
-                      <DropdownMenuSubContent>
-                        <DropdownMenuItem>Email</DropdownMenuItem>
-                        <DropdownMenuItem>Message</DropdownMenuItem>
-                        <DropdownMenuSeparator />
-                        <DropdownMenuItem>More...</DropdownMenuItem>
-                      </DropdownMenuSubContent>
-                    </DropdownMenuPortal>
-                  </DropdownMenuSub>
-                  <DropdownMenuItem>
-                    New Team
-                    <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+                  <DropdownMenuLabel>Contributors</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                    Shobhit Singh
+                    <h1 className="2xl:text-[20px]">🦁</h1>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                    Ayush Singh
+                    <h1 className="2xl:text-[20px]">🚀</h1>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>GitHub</DropdownMenuItem>
-                <DropdownMenuItem>Support</DropdownMenuItem>
-                <DropdownMenuItem disabled>API</DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  Log out
-                  <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+                <DropdownMenuItem className="2xl:justify-between 2xl:items-center">
+                  Donate Me
+                  <h1 className="2xl:text-[20px]">💰</h1>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
