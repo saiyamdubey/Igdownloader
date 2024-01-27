@@ -20,11 +20,10 @@ function Navbar({}: Props) {
   };
 
   return (
-    <div className=" max-w-9xl w-full items-center justify-evenly font-mono lg:flex border-orange-400 border-b-[1px]  ">
-      <div className="flex flex-row logo mb-3 hover:italic">
-        <Link className="hover:border-b-[1px] pb-0" href="/" prefetch={true}>
-          {/* Instagram Downloader */}
-          <h2 className="scroll-m-10  text-3xl font-bold tracking-wider first:mt-0 text-primary">
+    <div className=" max-w-9xl w-full items-center justify-evenly font-mono lg:flex border-orange-400 border-b-[1px] ">
+      <div className="logo mb-3">
+        <Link className="flex" href="/" prefetch={true}>
+          <h2 className="scroll-m-10  text-3xl font-bold tracking-wider first:mt-0 text-primary hover:italic">
             Insta
           </h2>
           <h3 className="scroll-m-10 text-3xl font-semibold tracking-widest ">
