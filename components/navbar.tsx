@@ -187,14 +187,38 @@ function Navbar({}: Props) {
                         Me
                       </Button>
                     </div>
-                    <div className="sociallink flex ">
+                    <div className="sociallink flex-col ">
                       <Link
                         className="hover:border-b-[1px] pb-0 sm:flex sm:justify-between sm:items-center"
                         href="https://github.com/saiyamdubey/"
-                        prefetch={true}
                       >
                         <Image
                           src={"github.svg"}
+                          width={60}
+                          height={60}
+                          className="mx-2"
+                          alt="fb"
+                        />
+                      </Link>
+                      <Link
+                        className="hover:border-b-[1px] pb-0 sm:flex sm:justify-between sm:items-center"
+                        href="https://github.com/saiyamdubey/"
+                      >
+                        <Image
+                          src={"twitterbird.svg"}
+                          width={60}
+                          height={60}
+                          className="mx-2"
+                          alt="fb"
+                        />
+                      </Link>
+
+                      <Link
+                        className="hover:border-b-[1px] pb-0 sm:flex sm:justify-between sm:items-center"
+                        href="https://linkedin.com/saiyamdubey/"
+                      >
+                        <Image
+                          src={"linkedin.svg"}
                           width={60}
                           height={60}
                           className="mx-2"
