@@ -5,5 +5,9 @@ import React from "react";
 type Props = {};
 
 export default function Page({}: Props) {
-  return <div>Instagrm page</div>;
+  return (
+    <>
+      <div className="">jdmmvdon</div>
+    </>
+  );
 }
