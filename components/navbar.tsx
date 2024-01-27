@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 type Props = {};
 
@@ -32,15 +33,40 @@ function Navbar({}: Props) {
         </h3>
       </div>
       <div className="links flex flex-row">
-        <div className="mainlinks  ml-16">
-          <ul className="flex my-2 ml-8  [&>li]:mr-5 [&>li]:font-semibold [&>li]:cursor-pointer  [&>li]:border-orange-200">
-            <li className="hover:border-b-[1px] pb-[0px]">
-              Instagram Downloader
-            </li>
-            <li className="hover:border-b-[1px] pb-0">Youtube Downloder</li>
-            <li className="hover:border-b-[1px] pb-0">Pinterest Downloader</li>
-            <li className="hover:border-b-[1px] pb-0">Tiktok Downloader</li>
-          </ul>
+        <div className="mainlinks ml-16">
+          {/* <ol className="flex my-2 ml-8  [&>li]:mr-5 [&>li]:font-semibold [&>li]:cursor-pointer  [&>li]:border-orange-200"> */}
+          <Link
+            className="hover:border-b-[1px] pb-0"
+            href="/instagram/"
+            prefetch={true}
+          >
+            Instagram Downloader
+          </Link>
+
+          <Link
+            className="hover:border-b-[1px] pb-0"
+            href="/youtube"
+            prefetch={true}
+          >
+            Youtube Downloader
+          </Link>
+
+          <Link
+            className="hover:border-b-[1px] pb-0"
+            href="/pinterest"
+            prefetch={true}
+          >
+            Pinterest Downloader
+          </Link>
+
+          <Link
+            className="hover:border-b-[1px] pb-0"
+            href="/tiktok"
+            prefetch={true}
+          >
+            Tiktok Downloader
+          </Link>
+          {/* </ol> */}
         </div>
         <div className="darkmode mb-2 mt-1">
           <DropdownMenu>
