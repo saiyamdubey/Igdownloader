@@ -4,10 +4,19 @@ import React from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { IoIosLink } from "react-icons/io";
 import { Button } from "@/components/ui/button";
-import { FaLinkedin } from "react-icons/fa";
 import { GiMoneyStack } from "react-icons/gi";
 import {
   DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
@@ -34,8 +43,8 @@ function Navbar({}: Props) {
   };
 
   return (
-    <div className="w-dvw xl:flex-col sm:flex sm:justify-between items-center  justify-evenly font-mono sm:p-2  border-orange-300 border-b-[1px] ">
-      <div className="logo mb-3 sm:ml-8 sm:mt-3">
+    <div className="2xl:flex w-dvw sm:flex sm:justify-between items-center justify-evenly font-mono sm:p-2  border-orange-300 border-b-[1px] ">
+      <div className="logo mb-3 sm:ml-8 sm:mt-3  ">
         <Link className="flex" href="/" prefetch={true}>
           <h2 className="scroll-m-10 sm:text-[20px] 2xl:text-3xl font-bold tracking-wider first:mt-0 text-primary hover:italic">
             Insta
@@ -43,7 +52,7 @@ function Navbar({}: Props) {
           <h3 className="scroll-m-10 sm:text-[20px] 2xl:text-3xl font-bold tracking-widest ">
             down
           </h3>
-          <h3 className="scroll-m-10 sm:text-[10px] 2xl:text-[10px] font-bold tracking-widest ">
+          <h3 className="scroll-m-10 sm:text-[10px] 2xl:text-[14px] font-bold tracking-widest ">
             .io
           </h3>
         </Link>
@@ -83,8 +92,8 @@ function Navbar({}: Props) {
             </Link>
           </ol>
         </div>
-        <div className="darkmode sm:mr-4 sm:flex justify-center items-center">
-          <div>
+        <div className="darkmode sm:mr-4 sm:flex 2xl:flex  justify-center items-center">
+          <div className="2xl:hidden">
             <Sheet key={"top"}>
               <SheetTrigger>
                 <div className="dropdown sm:mt-3 sm:mr-3 flex-row justify-center items-center">
@@ -107,7 +116,7 @@ function Navbar({}: Props) {
                     </div>
                   </SheetTitle>
                   <SheetDescription>
-                    <ol className="flex my-2 ml-2 sm:flex-col [&>a]:mr-6 [&>a]:font-semibold sm:place-items-start [&>a]:cursor-pointer [&>a]:mt-7 sm:text-[16px] [&>]:border-orange-500">
+                    <ul className="flex my-2 ml-2 sm:flex-col [&>a]:mr-6 [&>a]:font-semibold sm:items-center [&>a]:cursor-pointer [&>a]:mt-7 sm:text-[16px] [&>]:border-orange-500">
                       <Link
                         className="hover:border-b-[1px] flex items-center"
                         href="/instagram"
@@ -159,9 +168,9 @@ function Navbar({}: Props) {
                       >
                         <Image
                           src={"tiktok.svg"}
-                          width={25}
+                          width={30}
                           className="mx-2"
-                          height={25}
+                          height={30}
                           alt="tk"
                         />
                         Tiktok Downloader
@@ -173,41 +182,41 @@ function Navbar({}: Props) {
                       >
                         <Image
                           src={"facebook.svg"}
-                          width={25}
-                          height={25}
+                          width={22}
+                          height={22}
                           className="mx-2"
                           alt="fb"
                         />
                         Facebook Downloader
                       </Link>
-                    </ol>
+                    </ul>
                     <div className="sm:mt-10">
                       <Button className="sm:ml-6 sm:justify-between sm:text-[18px] sm:p-7 sm:font-extrabold">
                         <GiMoneyStack className="mr-1 pr-2 h-10 w-10" /> Donate
                         Me
                       </Button>
                     </div>
-                    <div className="sociallink flex-col ">
+                    <div className="sociallink sm:flex sm:mt-40 sm:justify-evenly border-t-[1px] pt-5">
                       <Link
                         className="hover:border-b-[1px] pb-0 sm:flex sm:justify-between sm:items-center"
                         href="https://github.com/saiyamdubey/"
                       >
                         <Image
                           src={"github.svg"}
-                          width={60}
-                          height={60}
+                          width={45}
+                          height={45}
                           className="mx-2"
                           alt="fb"
                         />
                       </Link>
                       <Link
                         className="hover:border-b-[1px] pb-0 sm:flex sm:justify-between sm:items-center"
-                        href="https://github.com/saiyamdubey/"
+                        href="https://twitter.com/Saiyam02079791"
                       >
                         <Image
                           src={"twitterbird.svg"}
-                          width={60}
-                          height={60}
+                          width={45}
+                          height={45}
                           className="mx-2"
                           alt="fb"
                         />
@@ -215,12 +224,12 @@ function Navbar({}: Props) {
 
                       <Link
                         className="hover:border-b-[1px] pb-0 sm:flex sm:justify-between sm:items-center"
-                        href="https://linkedin.com/saiyamdubey/"
+                        href="https://www.linkedin.com/in/saiyam-dubey-77a5371b8/"
                       >
                         <Image
                           src={"linkedin.svg"}
-                          width={60}
-                          height={60}
+                          width={43}
+                          height={43}
                           className="mx-2"
                           alt="fb"
                         />
@@ -231,10 +240,73 @@ function Navbar({}: Props) {
               </SheetContent>
             </Sheet>
           </div>
+          <div className="sm:hidden 2xl:mr-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="link">
+                  <div className="dropdown sm:mt-3 sm:mr-3 flex-row justify-center items-center">
+                    <RiArrowDropDownLine size={35} />
+                  </div>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56">
+                <DropdownMenuLabel>Social Accounts</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem>
+                    Profile
+                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Billing
+                    <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Settings
+                    <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Keyboard shortcuts
+                    <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+                <DropdownMenuGroup>
+                  <DropdownMenuItem>Team</DropdownMenuItem>
+                  <DropdownMenuSub>
+                    <DropdownMenuSubTrigger>
+                      Invite users
+                    </DropdownMenuSubTrigger>
+                    <DropdownMenuPortal>
+                      <DropdownMenuSubContent>
+                        <DropdownMenuItem>Email</DropdownMenuItem>
+                        <DropdownMenuItem>Message</DropdownMenuItem>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem>More...</DropdownMenuItem>
+                      </DropdownMenuSubContent>
+                    </DropdownMenuPortal>
+                  </DropdownMenuSub>
+                  <DropdownMenuItem>
+                    New Team
+                    <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>GitHub</DropdownMenuItem>
+                <DropdownMenuItem>Support</DropdownMenuItem>
+                <DropdownMenuItem disabled>API</DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem>
+                  Log out
+                  <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
           <div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="link" size="icon">
+                <Button variant="secondary" size="icon">
                   <SunIcon
                     onClick={() => handleThemeChange("dark")}
                     className="h-[1.5rem] w-[1.5rem] sm:h-[1.2rem] sm:w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0 border-none"
