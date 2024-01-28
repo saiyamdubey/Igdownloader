@@ -6,10 +6,10 @@ import { Input } from "@/components/ui/input";
 
 export default function FooterDemo() {
   return (
-    <footer className="sm:overflow-hidden">
+    <footer className="sm:overflow-hidden overflow-hidden bg-black">
       <div
         className="
-        flex flex-col flex-wrap
+        sm:flex sm:flex-col sm:flex-wrap
         py-8
         mx-auto
         sm:items-center
@@ -18,10 +18,10 @@ export default function FooterDemo() {
       >
         <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
           <Link className="flex justify-center mb-6" href="/" prefetch={true}>
-            <h2 className="scroll-m-10 sm:text-[26px] 2xl:text-3xl 2xl:font-black tracking-wider first:mt-0 text-primary hover:italic">
+            <h2 className="scroll-m-10 sm:text-[30px] 2xl:text-3xl sm:ml-2 font-black tracking-wider first:mt-0 text-primary hover:italic">
               Insta
             </h2>
-            <h3 className="scroll-m-10 sm:text-[25px] 2xl:text-3xl font-bold tracking-widest ">
+            <h3 className="scroll-m-10 sm:text-[30px] 2xl:text-3xl font-bold tracking-widest ">
               down
             </h3>
             <h3 className="scroll-m-10 sm:text-[12px]  2xl:text-[14px] font-bold tracking-widest ">
