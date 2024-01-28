@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
+import Typing from "@/components/typing";
 
 export const metadata: Metadata = {
   title: "Instant Downloader videos  ",
@@ -13,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex flex-col">
       <Navbar />
       {children}
     </main>

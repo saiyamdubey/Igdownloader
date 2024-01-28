@@ -111,7 +111,7 @@ function Navbar({}: Props) {
                     </div>
                   </SheetTitle>
                   <SheetDescription>
-                    <ul className="flex my-2 ml-2 sm:flex-col [&>a]:mr-6 [&>a]:font-semibold sm:items-center [&>a]:cursor-pointer [&>a]:mt-7 sm:text-[16px] [&>]:border-orange-500">
+                    <ul className="flex my-2 ml-4 sm:flex-col [&>a]:mr-6 [&>a]:font-semibold sm:items-start [&>a]:cursor-pointer [&>a]:mt-7 sm:text-[16px]">
                       <Link
                         className="hover:border-b-[1px] flex items-center"
                         href="/instagram"

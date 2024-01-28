@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import * as React from "react";
-import Typing from "@/components/typing"
+import Footerdemo from "@/components/footer"
 
 
 export default function DatePickerWithPresets({
@@ -9,10 +9,11 @@ export default function DatePickerWithPresets({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex min-h-screen w-svw overflow-hidden flex-col items-center justify-between p-2">
+    <main className="flex min-h-dvh w-dvw overflow-hidden flex-col items-center justify-between">
       <Navbar />
       {children}
-      <Typing />
+      
+      <Footerdemo/>
     </main>
   );
 }
