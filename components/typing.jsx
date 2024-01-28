@@ -13,13 +13,11 @@ class Typing extends React.Component {
       typeSpeed: 80,
       backSpeed: 80,
       loop: true,
-      cursorChar: "|",
+      cursorChar: " |",
     };
-    // this.el refers to the <span> in the render() method
     this.typed = new Typed(this.el, options);
   }
   componentWillUnmount() {
-    // Please don't forget to cleanup animation layer
     this.typed.destroy();
   }
 

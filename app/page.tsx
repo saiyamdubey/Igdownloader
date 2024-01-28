@@ -9,10 +9,9 @@ export default function DatePickerWithPresets({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex min-h-dvh w-dvw overflow-hidden flex-col items-center justify-between">
+    <main className="flex min-h-dvh overflow-hidden flex-col items-center justify-between">
       <Navbar />
       {children}
-      
       <Footerdemo/>
     </main>
   );

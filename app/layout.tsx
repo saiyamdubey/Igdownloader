@@ -3,8 +3,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import FooterDemo from "@/components/footer";
 
-
-
 export const metadata: Metadata = {
   title:
     "Instant Downloader videos  || Instagram Downloader Video  | Images , Reel , DP , Stories , Highlights",
@@ -27,7 +25,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {children}
-          <FooterDemo/>
+          <FooterDemo />
         </ThemeProvider>
       </body>
     </html>

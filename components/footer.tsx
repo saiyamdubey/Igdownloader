@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 
 export default function FooterDemo() {
   return (
-    <footer className="sm:overflow-hidden overflow-hidden">
+    <footer className="sm:overflow-hidden 2xl:overflow-hidden">
       <div
         className="
         sm:flex sm:flex-col sm:flex-wrap
@@ -159,7 +159,7 @@ export default function FooterDemo() {
               </li>
             </ul>
           </div>
-          <div className="w-full px-4 lg:w-1/3 md:w-1/2">
+          <div className="w-dvw px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
               Pinterest
             </h2>
