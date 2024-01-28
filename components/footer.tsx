@@ -9,7 +9,7 @@ export default function FooterDemo() {
     <footer className="sm:overflow-hidden 2xl:overflow-hidden">
       <div
         className="
-        sm:flex sm:flex-col sm:flex-wrap
+        sm:flex sm:flex-col 2xl:flex-nowrap sm:flex-wrap
         py-8
         mx-auto
         sm:items-center
