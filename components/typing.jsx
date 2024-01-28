@@ -1,20 +1,19 @@
 import React from "react";
 import Typed from 'typed.js'
-// Import the desired words
-// import words from "./words";
+
 
 const words = [
     'Saiyam Dubey',
     'Ayush Singh',
-    'Shobhit Singh '
+    'Shobhit Singh',
 ]
 
 class Typing extends React.Component {
     componentDidMount() {
         const options = {
             strings: words,
-            typeSpeed: 100,
-            backSpeed: 100,
+            typeSpeed: 80,
+            backSpeed: 80,
             loop: true,
             cursorChar: "|",
         };
