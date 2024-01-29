@@ -4,7 +4,7 @@ type Props = {}
 
 function Description({}: Props) {
   return (
-    <div>Instagram Description</div>
+    <div>tiktok Description</div>
   )
 }
 
