@@ -4,6 +4,8 @@
 
 body{
   user-select: none;
+  -webkit-user-select:none;
+  scroll-behavior:smooth;
 }
 
 /* Orange */

@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 
 export default function Footer() {
   return (
-    <footer className="sm:overflow-hidden 2xl:overflow-hidden">
+    <footer className=" border-t-2 border-gray-800 sm:overflow-hidden 2xl:overflow-hidden">
       <div
         className="
         sm:flex sm:flex-col  sm:flex-wrap
@@ -56,6 +56,56 @@ export default function Footer() {
           </div>
         </div>
         <div className="2xl:flex 2xl:ml-8 2xl:py-16 2xl:pl-5 2xl:border-l-2 border-gray-300 2xl:w-5/6 justify-between 2xl:my-auto 2xl:mx-auto w-full mt-4 text-center sm:flex-col">
+        <div className="w-full px-4 lg:w-1/3 md:w-1/2">
+            <h2 className="mb-4 font-extrabold text-xl tracking-widest ">
+              Facebook
+            </h2>
+            <ul className="mb-8 space-y-2 text-sm list-none">
+              <li>
+                <Link href={"/"} className="">
+                  Facbook Videos Download
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="">
+                  Profile Facebook Download
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="">
+                  Shorts Video Downloder
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="">
+                  Stories Downloder Facebook
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
+          <div className="w-full px-4 lg:w-1/3 md:w-1/2">
+            <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
+              Youtube
+            </h2>
+            <ul className="mb-8 space-y-2 text-sm list-none">
+              <li>
+                <Link href={"/"} className="">
+                  Instant Video Download
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="">
+                  Quality Profile Photo
+                </Link>
+              </li>
+              <li>
+                <Link href={"/"} className="">
+                  Youtube Shorts Downloder
+                </Link>
+              </li>
+            </ul>
+          </div>
           <div className="w-full">
             <h2 className="mb-4 font-extrabold text-xl tracking-widest ">
               Instagram
@@ -88,51 +138,21 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="w-full px-4 lg:w-1/3 md:w-1/2">
+          
+          
+          <div className=" w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
-              Youtube
+              Pinterest
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
                 <Link href={"/"} className="">
-                  Instant Video Download
+                  Image Downloader
                 </Link>
               </li>
               <li>
                 <Link href={"/"} className="">
-                  Quality Profile Photo
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"} className="">
-                  Youtube Shorts Downloder
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full px-4 lg:w-1/3 md:w-1/2">
-            <h2 className="mb-4 font-extrabold text-xl tracking-widest ">
-              Facebook
-            </h2>
-            <ul className="mb-8 space-y-2 text-sm list-none">
-              <li>
-                <Link href={"/"} className="">
-                  Facbook Videos Download
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"} className="">
-                  Profile Facebook Download
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"} className="">
-                  Shorts Video Downloder
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"} className="">
-                  Stories Downloder Facebook
+                  pinterest Video Downloder
                 </Link>
               </li>
             </ul>
@@ -155,23 +175,6 @@ export default function Footer() {
               <li>
                 <Link href={"/"} className="">
                   Tiktok Shorts Downloder
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className=" w-full px-4 lg:w-1/3 md:w-1/2">
-            <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
-              Pinterest
-            </h2>
-            <ul className="mb-8 space-y-2 text-sm list-none">
-              <li>
-                <Link href={"/"} className="">
-                  Image Downloader
-                </Link>
-              </li>
-              <li>
-                <Link href={"/"} className="">
-                  pinterest Video Downloder
                 </Link>
               </li>
             </ul>
