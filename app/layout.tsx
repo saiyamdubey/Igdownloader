@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
-import FooterDemo from "@/components/footer";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Downloder from "@/components/downloder";
