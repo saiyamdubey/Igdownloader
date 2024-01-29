@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import FooterDemo from "@/components/footer";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import Downloder from "@/components/downloder";
 
 export const metadata: Metadata = {
   title:
@@ -27,8 +28,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <Downloder />
           {children}
-          <Footer/>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
