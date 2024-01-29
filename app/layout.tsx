@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import Downloder from "@/components/downloder";
+import Downloder from "@/Download/instagramdownloder";
 
 export const metadata: Metadata = {
   title:

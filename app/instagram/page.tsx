@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Children } from "react";
 import Description from "./description";
 type Props = {};
 
