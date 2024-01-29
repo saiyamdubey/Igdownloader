@@ -1,4 +1,6 @@
+import FooterDemo from "@/components/footer";
 import Navbar from "@/components/navbar";
+import Typing from "@/components/typing";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,8 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex min-h-dvh flex-col">
-      <Navbar />
+    <main className="flex overflow-hidden flex-col">
       {children}
     </main>
   );

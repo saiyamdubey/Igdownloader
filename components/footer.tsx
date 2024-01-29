@@ -4,19 +4,19 @@ import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
-export default function FooterDemo() {
+export default function Footer() {
   return (
     <footer className="sm:overflow-hidden 2xl:overflow-hidden">
       <div
         className="
-        sm:flex sm:flex-col 2xl:flex-nowrap sm:flex-wrap
-        py-8
-        mx-auto
+        sm:flex sm:flex-col  sm:flex-wrap
+        sm:py-8
+        sm:mx-auto
         sm:items-center
-        md:flex-row md:flex-nowrap
+        2xl:flex
       "
       >
-        <div className="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
+        <div className="2xl:mt-10  2xl:ml-12 sm:w-64 2xl:w-1/5 text-center ">
           <Link className="flex justify-center mb-6" href="/" prefetch={true}>
             <h2 className="scroll-m-10 sm:text-[30px] 2xl:text-3xl sm:ml-2 font-black tracking-wider first:mt-0 text-primary  hover:italic">
               Insta
@@ -34,13 +34,13 @@ export default function FooterDemo() {
             my Github Repository which is mentioned on the page of my github
             (saiyamdubey) .... 💖
           </p>
-          <div className="flex mt-4 sm:flex-col ">
+          <div className="flex mt-4 sm:flex-col 2xl:flex-col">
             <Input type="email" placeholder="Email" />
-            <Button variant="outline" className="bg-primary sm:mt-3 ">
+            <Button variant="outline" className="bg-primary  sm:mt-3 2xl:mt-4">
               Subscribe
             </Button>
           </div>
-          <div className="flex my-10 justify-center space-x-4">
+          <div className="flex my-10  justify-center space-x-4">
             <Link href={"/"}>
               <Facebook className="text-blue-500" />
             </Link>
@@ -55,8 +55,8 @@ export default function FooterDemo() {
             </Link>
           </div>
         </div>
-        <div className="justify-between w-dvw mt-4 text-center sm:flex-col">
-          <div className="w-dvw lg:w-1/3 md:w-1/2">
+        <div className="2xl:flex 2xl:ml-8 2xl:py-16 2xl:pl-5 2xl:border-l-2 border-gray-300 2xl:w-5/6 justify-between 2xl:my-auto 2xl:mx-auto w-full mt-4 text-center sm:flex-col">
+          <div className="w-full">
             <h2 className="mb-4 font-extrabold text-xl tracking-widest ">
               Instagram
             </h2>
@@ -159,7 +159,7 @@ export default function FooterDemo() {
               </li>
             </ul>
           </div>
-          <div className="w-dvw px-4 lg:w-1/3 md:w-1/2">
+          <div className=" w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
               Pinterest
             </h2>
@@ -178,7 +178,7 @@ export default function FooterDemo() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center border-t-2 border-primary">
+      <div className="w-dvw flex justify-center border-t-2 border-primary">
         <p className="text-center sm:text-[13px] text-primary py-4">
           @2024 Ram Ram Bhaiyo .
         </p>

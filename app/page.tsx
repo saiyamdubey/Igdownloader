@@ -1,7 +1,6 @@
 import Navbar from "@/components/navbar";
 import * as React from "react";
-import Footerdemo from "@/components/footer"
-
+import Footer from "@/components/footer";
 
 export default function DatePickerWithPresets({
   children,
@@ -9,10 +8,8 @@ export default function DatePickerWithPresets({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex min-h-dvh overflow-hidden flex-col items-center justify-between">
-      <Navbar />
+    <main className="flex overflow-hidden flex-col items-center justify-between">
       {children}
-      <Footerdemo/>
     </main>
   );
 }
