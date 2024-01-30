@@ -1,5 +1,10 @@
 import React from "react";
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 type Props = {};
 
 function Description({}: Props) {
@@ -88,6 +93,21 @@ function Description({}: Props) {
               <li>Hurray! Your Instagram video downloading link is copied.</li>
               <li>Happy Downloding journey Boss 🦁 ...</li>
             </ul>
+            <h2 className="text-xl text-primary mb-4">
+              Frequently Asked Question
+            </h2>
+            <Accordion.Root orientation="horizontal">
+              <Accordion.Item value="item-1">…</Accordion.Item>
+              <Accordion.Item value="item-2">…</Accordion.Item>
+            </Accordion.Root>
+            <Accordion type="multiple" collapsible orientation="horizontal">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionContent>
+                  Yes. It adheres to the WAI-ARIA design pattern.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </div>
