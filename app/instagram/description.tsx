@@ -96,15 +96,95 @@ function Description({}: Props) {
             <h2 className="text-xl text-primary mb-4">
               Frequently Asked Question
             </h2>
-            <Accordion.Root orientation="horizontal">
-              <Accordion.Item value="item-1">…</Accordion.Item>
-              <Accordion.Item value="item-2">…</Accordion.Item>
-            </Accordion.Root>
-            <Accordion type="multiple" collapsible orientation="horizontal">
+            <Accordion
+              className=""
+              type="single"
+              collapsible
+              orientation="horizontal"
+            >
               <AccordionItem value="item-1">
-                <AccordionTrigger>Is it accessible?</AccordionTrigger>
+                <AccordionTrigger>
+                  How to download Instagram videos in HD on Android?
+                </AccordionTrigger>
                 <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
+                  Copy the Instagram video link → Go to SaveIG.app → Paste the
+                  copied Instagram link into the input box → Download.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2">
+                <AccordionTrigger>
+                  Download Instagram Video in Original Quality.
+                </AccordionTrigger>
+                <AccordionContent>
+                  We are providing you Instagram video downloading in Original
+                  High-Quality HD, the quality of the video also matters to the
+                  video creator in which format or Quality they uploaded the
+                  video. If they uploaded the Video in 720p, 1080p, or in any
+                  other pixel quality, we provide you the same quality
+                  downloading.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3">
+                <AccordionTrigger>
+                  How can be download video Instagram?
+                </AccordionTrigger>
+                <AccordionContent>
+                  We make our tool simple and secure. We have to provide
+                  Instagram video downloading only in just 2 steps. First, you
+                  need a link to that video which you want to download and then
+                  Paste copied link inside the Instagram video downloader input
+                  box which is presented by indown.io and hit the download
+                  button.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4">
+                <AccordionTrigger>
+                  What is Instagram Video Downloader?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Instagram Video Downloader is a web-based tool that provides
+                  you any Instagram Video Downloading absolutely free of cost
+                  without providing your log-in details.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5">
+                <AccordionTrigger>
+                  Do I have to pay to download videos from Instagram?
+                </AccordionTrigger>
+                <AccordionContent>
+                  Absolutely not, with SaveIG.app you can download Instagram
+                  videos for free. Download videos from Instagram in high
+                  quality 4K, 8K without paying any cost.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-6">
+                <AccordionTrigger>
+                  Is downloading Instagram Video is illegal?
+                </AccordionTrigger>
+                <AccordionContent>
+                  No, Download Instagram Video in not illegal, if you use for
+                  personal use or make a playlist of video in your phone gallery
+                  then its fine no issue but if you use for commercial purpose
+                  then you have proper permission of the original video creator
+                  or from Instagram.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-7">
+                <AccordionTrigger>
+                  Can we download Instagram private video?
+                </AccordionTrigger>
+                <AccordionContent>
+                  The answer is Yes! But on this page, we did not allow
+                  Instagram private video downloading because private
+                  downloading is a little bit tricky. To download Instagram
+                  private video, go to - indown.io/private-downloader and follow
+                  the instruction for downloading the private video.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
