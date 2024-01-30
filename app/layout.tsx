@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className=" font-mono overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

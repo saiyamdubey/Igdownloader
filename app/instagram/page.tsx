@@ -7,7 +7,7 @@ type Props = {};
 export default function Page({}: Props) {
   return (
     <>
-      <div className="text-8xl flex-row  overflow-hidden text-primary flex justify-center items-center h-fit">
+      <div className=" flex-row  overflow-hidden flex justify-center items-center">
         <div className="flex-col">
           <Description />
         </div>
