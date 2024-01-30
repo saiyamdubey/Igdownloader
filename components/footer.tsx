@@ -56,51 +56,51 @@ export default function Footer() {
           </div>
         </div>
         <div className="2xl:flex 2xl:ml-8 2xl:py-16 2xl:pl-5 2xl:border-l-2 border-gray-300 2xl:w-5/6 justify-between 2xl:my-auto 2xl:mx-auto w-full mt-4 text-center sm:flex-col">
-        <div className="w-full px-4 lg:w-1/3 md:w-1/2">
+          <div className="w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-4 font-extrabold text-xl tracking-widest ">
               Facebook
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Facbook Videos Download
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Profile Facebook Download
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Shorts Video Downloder
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Stories Downloder Facebook
                 </Link>
               </li>
             </ul>
           </div>
-          
+
           <div className="w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
               Youtube
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Instant Video Download
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Quality Profile Photo
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Youtube Shorts Downloder
                 </Link>
               </li>
@@ -112,46 +112,45 @@ export default function Footer() {
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Instagram video Download
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Instagram Profile Download
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Instagram Highlights Download
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Instagram Stories Download
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Instagram Carosol Download
                 </Link>
               </li>
             </ul>
           </div>
-          
-          
+
           <div className=" w-full px-4 lg:w-1/3 md:w-1/2">
             <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
               Pinterest
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Image Downloader
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   pinterest Video Downloder
                 </Link>
               </li>
@@ -163,17 +162,20 @@ export default function Footer() {
             </h2>
             <ul className="mb-8 space-y-2 text-sm list-none">
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Profile Pic Downloder
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link
+                  href={"/"}
+                  className="hover:border-b-[2px] border-primary"
+                >
                   Tiktok Video Downloder
                 </Link>
               </li>
               <li>
-                <Link href={"/"} className="">
+                <Link href={"/"} className="hover:border-b-[2px] border-primary">
                   Tiktok Shorts Downloder
                 </Link>
               </li>
