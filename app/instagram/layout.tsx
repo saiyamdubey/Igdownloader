@@ -1,7 +1,4 @@
-import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
-import Typing from "@/components/typing";
-import IgDownloder from "@/api/instagramdownloder";
 
 export const metadata: Metadata = {
   title: "Instant Downloader videos  ",
@@ -14,11 +11,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <main className="flex flex-col overflow-hidden">
-      <IgDownloder />
-      
-      {children}
-    </main>
-  );
+  return <main className="flex flex-col overflow-hidden">{children}</main>;
 }
