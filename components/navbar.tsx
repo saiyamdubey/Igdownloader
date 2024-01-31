@@ -107,11 +107,11 @@ function Navbar({}: Props) {
                   >
                     <div className="flex justify-evenly">
                       <IoIosLink />
-                      <h1>More Searched links</h1>
+                      <h1 className="ml-2">Other links</h1>
                     </div>
                   </SheetTitle>
                   <SheetDescription>
-                    <ul className="flex my-2 ml-4 sm:flex-col [&>a]:mr-6 [&>a]:font-semibold sm:items-start [&>a]:cursor-pointer [&>a]:mt-7 sm:text-[16px]">
+                    <ul className="flex my-2 ml-4 sm:flex-col sm:[&>a]:-mr-4 [&>a]:font-semibold sm:items-start [&>a]:cursor-pointer [&>a]:mt-7 sm:text-[15px]">
                       <Link
                         className="hover:border-b-[1px] flex items-center"
                         href="/instagram"

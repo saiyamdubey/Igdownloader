@@ -3,7 +3,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
-import Downloder from "@/api/instagramdownloder";
 
 export const metadata: Metadata = {
   title:
@@ -19,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-mono overflow-x-hidden">
+      <body className="font-serif overflow-x-hidden">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Image from "next/image";
 
 type Props = {};
 
@@ -13,7 +14,7 @@ function Description({}: Props) {
     <>
       <div className=" max-w-full overflow-hidden">
         <div className="py-10 px-4">
-          <h1 className="2xl:text-5xl sm:text-3xl sm:font-extrabold  text-primary font-bold text-center text-ellipsis mt-4 mb-6">
+          <h1 className="2xl:text-5xl sm:text-2xl font-serif sm:font-extrabold  text-primary font-semibold text-center text-ellipsis my-6">
             Instagram Downloder App
           </h1>
           <div className="px-2 mx-auto">
@@ -50,34 +51,42 @@ function Description({}: Props) {
               </li>
             </ul>
 
-            <h2 className="text-xl text-primary mb-4 sm:text-center">
-              How to Download Instagram Video?
-            </h2>
-            <p className="text-base text-justify text-wrap mb-6">
-              <span className="sm:mr-16"></span>Instagram downloader tool is
-              providing very simple Instagram video downloading in only just 2
-              steps but before following these instructions:
-            </p>
-            <ul className="list-disc sm:[&>li]:mt-4 sm:ml-2 text-[14px] mb-8">
-              <li>Copy the link to that video which you want to download.</li>
-              <li>Open indown.io (in your web browser).</li>
-              <li>
-                Paste the video link in the Instagram video downloader input
-                box.
-              </li>
-              <li>Now your video will be synchronized automatically.</li>
-              <li>
-                Click on the Download button to being process your video
-                downloading.
-              </li>
-              <li>
-                That`s all! Your video will be downloaded. How simple it is!
-              </li>
-              <li>
-                You can also download IGTV videos, Photos, and Feed videos.
-              </li>
-            </ul>
-
+            <div>
+              <div>
+                <h2 className="text-xl text-primary mb-4 sm:text-center">
+                  How to Download Instagram Video?
+                </h2>
+                <p className="text-base text-justify text-wrap mb-6">
+                  <span className="sm:mr-16"></span>Instagram downloader tool is
+                  providing very simple Instagram video downloading in only just
+                  2 steps but before following these instructions:
+                </p>
+                <ul className="list-disc sm:[&>li]:mt-4 sm:ml-2 text-[14px] mb-8">
+                  <li>
+                    Copy the link to that video which you want to download.
+                  </li>
+                  <li>Open indown.io (in your web browser).</li>
+                  <li>
+                    Paste the video link in the Instagram video downloader input
+                    box.
+                  </li>
+                  <div className="my-10">
+                    <img className="" src="mcstan1.png" alt="mcstan" />
+                  </div>
+                  <li>Now your video will be synchronized automatically.</li>
+                  <li>
+                    Click on the Download button to being process your video
+                    downloading.
+                  </li>
+                  <li>
+                    That`s all! Your video will be downloaded. How simple it is!
+                  </li>
+                  <li>
+                    You can also download IGTV videos, Photos, and Feed videos.
+                  </li>
+                </ul>
+              </div>
+            </div>
             <h2 className="text-xl text-primary mb-4 sm:text-center">
               Copy Link for Download Video Instagram?
             </h2>
@@ -89,6 +98,9 @@ function Description({}: Props) {
             <ul className=" list-decimal sm:[&>li]:mt-4 sm:ml-6 text-[14px] mb-8">
               <li>Open the Instagram application</li>
               <li>Choose the video which you want to download</li>
+              <div className="my-10">
+                <img src="ronaldo3.png" alt="ronaldoteam" />
+              </div>
               <li>Click on the 3 dots.</li>
               <li>Popup open, Now click on Copy Link</li>
               <li>Hurray! Your Instagram video downloading link is copied.</li>
@@ -180,7 +192,7 @@ function Description({}: Props) {
                 <AccordionTrigger>
                   Can we download Instagram private video?
                 </AccordionTrigger>
-                <AccordionContent className=" font-medium">
+                <AccordionContent className=" font-medium text">
                   The answer is Yes! But on this page, we did not allow
                   Instagram private video downloading because private
                   downloading is a little bit tricky. To download Instagram
@@ -189,11 +201,11 @@ function Description({}: Props) {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h2 className="text-xl text-primary mb-4 mt-10 sm:text-center">
+            <h2 className="text-2xl text-primary mb-4 mt-10 sm:text-center">
               Terms and Conditions
             </h2>
-            <p className="text-base text-justify text-wrap mb-6 font-medium">
-              <span className="sm:mr-16"></span>
+            <p className="text-[15px] text-justify text-wrap mb-6 font-medium">
+              <span className="sm:mr-2"></span>
               This site is an educational purposes, this site is using
               information that is freely available. This site has not any right
               of videos or photos in which you have downloaded the only right of
