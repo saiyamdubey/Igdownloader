@@ -28,11 +28,11 @@ export default function Footer() {
               .io
             </h3>
           </Link>
-          <p className="my-8 text-xs text-justify text-gray-400">
+          <p className="my-8 text-xs 2xl:text-[16px] text-justify text-gray-400 leading-5">
             Saiyam Dubey (Devloper 🙊) : I am Working on this site just for the
             Educational purpose , I also want you to contribute on this site on
             my Github Repository which is mentioned on the page of my github
-            (saiyamdubey) .... 💖
+            (saiyamdubey).. 💖
           </p>
           <div className="flex mt-4 sm:flex-col 2xl:flex-col">
             <Input type="email" placeholder="Email" />
@@ -60,13 +60,13 @@ export default function Footer() {
             <h2 className="mb-4 font-extrabold text-xl tracking-widest ">
               Facebook
             </h2>
-            <ul className="mb-8 space-y-2 text-sm list-none">
+            <ul className="mb-8 space-y-2 text-sm list-none 2xl:[&>li>a]:text-[15px] 2xl:[&>li>a]:leading-8">
               <li>
                 <Link
                   href={"/"}
                   className="hover:border-b-[2px] border-primary"
                 >
-                  Facbook Videos Download
+                  Facebook Videos Download
                 </Link>
               </li>
               <li>
@@ -100,7 +100,7 @@ export default function Footer() {
             <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
               Youtube
             </h2>
-            <ul className="mb-8 space-y-2 text-sm list-none">
+            <ul className="mb-8 space-y-2 text-sm list-none 2xl:[&>li>a]:text-[15px] 2xl:[&>li>a]:leading-8">
               <li>
                 <Link
                   href={"/"}
@@ -131,7 +131,7 @@ export default function Footer() {
             <h2 className="mb-4 font-extrabold text-xl tracking-widest ">
               Instagram
             </h2>
-            <ul className="mb-8 space-y-2 text-sm list-none">
+            <ul className="mb-8 space-y-2 text-sm list-none 2xl:[&>li>a]:text-[15px] 2xl:[&>li>a]:leading-8">
               <li>
                 <Link
                   href={"/"}
@@ -148,14 +148,7 @@ export default function Footer() {
                   Instagram Profile Download
                 </Link>
               </li>
-              <li>
-                <Link
-                  href={"/"}
-                  className="hover:border-b-[2px] border-primary"
-                >
-                  Instagram Highlights Download
-                </Link>
-              </li>
+              
               <li>
                 <Link
                   href={"/"}
@@ -179,13 +172,21 @@ export default function Footer() {
             <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
               Pinterest
             </h2>
-            <ul className="mb-8 space-y-2 text-sm list-none">
+            <ul className="mb-8 space-y-2 text-sm list-none 2xl:[&>li>a]:text-[15px] 2xl:[&>li>a]:leading-8">
               <li>
                 <Link
                   href={"/"}
                   className="hover:border-b-[2px] border-primary"
                 >
                   Image Downloader
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={"/"}
+                  className="hover:border-b-[2px] border-primary"
+                >
+                  Instagram Highlights Download
                 </Link>
               </li>
               <li>
@@ -202,7 +203,7 @@ export default function Footer() {
             <h2 className="mb-4  font-extrabold text-xl tracking-widest ">
               Tiktok
             </h2>
-            <ul className="mb-8 space-y-2 text-sm list-none">
+            <ul className="mb-8 space-y-2 text-sm list-none 2xl:[&>li>a]:text-[15px] 2xl:[&>li>a]:leading-8">
               <li>
                 <Link
                   href={"/"}
