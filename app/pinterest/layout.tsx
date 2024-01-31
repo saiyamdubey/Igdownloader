@@ -14,7 +14,6 @@ export default function RootLayout({
 }>) {
   return (
     <main className="flex overflow-hidden flex-col">
-     
       {children}
     </main>
   );
