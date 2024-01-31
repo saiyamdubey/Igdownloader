@@ -30,7 +30,7 @@ function Description({}: Props) {
               downloading your Instagram Video.
             </p>
 
-            <h2 className="text-xl text-primary mb-4">
+            <h2 className="text-xl text-primary mb-4 sm:text-center">
               Key Feature of Instagram video downloader:
             </h2>
             <ul className="list-decimal sm:[&>li]:mt-4 sm:ml-5 text-[14px] mb-8">
@@ -50,7 +50,7 @@ function Description({}: Props) {
               </li>
             </ul>
 
-            <h2 className="text-xl text-primary mb-4">
+            <h2 className="text-xl text-primary mb-4 sm:text-center">
               How to Download Instagram Video?
             </h2>
             <p className="text-base text-justify text-wrap mb-6">
@@ -78,7 +78,7 @@ function Description({}: Props) {
               </li>
             </ul>
 
-            <h2 className="text-xl text-primary mb-4">
+            <h2 className="text-xl text-primary mb-4 sm:text-center">
               Copy Link for Download Video Instagram?
             </h2>
             <p className="text-base text-justify text-wrap mb-6">
@@ -94,7 +94,7 @@ function Description({}: Props) {
               <li>Hurray! Your Instagram video downloading link is copied.</li>
               <li>Happy Downloding journey Boss 🦁 ...</li>
             </ul>
-            <h2 className="text-xl text-primary mb-4">
+            <h2 className="text-xl text-primary mb-4 sm:text-center">
               Frequently Asked Question
             </h2>
             <Accordion
@@ -107,7 +107,7 @@ function Description({}: Props) {
                 <AccordionTrigger>
                   How to download Instagram videos in HD on Android?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className=" font-medium">
                   Copy the Instagram video link → Go to SaveIG.app → Paste the
                   copied Instagram link into the input box → Download.
                 </AccordionContent>
@@ -117,7 +117,7 @@ function Description({}: Props) {
                 <AccordionTrigger>
                   Download Instagram Video in Original Quality.
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className=" font-medium">
                   We are providing you Instagram video downloading in Original
                   High-Quality HD, the quality of the video also matters to the
                   video creator in which format or Quality they uploaded the
@@ -131,7 +131,7 @@ function Description({}: Props) {
                 <AccordionTrigger>
                   How can be download video Instagram?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className=" font-medium">
                   We make our tool simple and secure. We have to provide
                   Instagram video downloading only in just 2 steps. First, you
                   need a link to that video which you want to download and then
@@ -145,7 +145,7 @@ function Description({}: Props) {
                 <AccordionTrigger>
                   What is Instagram Video Downloader?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className=" font-medium">
                   Instagram Video Downloader is a web-based tool that provides
                   you any Instagram Video Downloading absolutely free of cost
                   without providing your log-in details.
@@ -156,7 +156,7 @@ function Description({}: Props) {
                 <AccordionTrigger>
                   Do I have to pay to download videos from Instagram?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className=" font-medium">
                   Absolutely not, with SaveIG.app you can download Instagram
                   videos for free. Download videos from Instagram in high
                   quality 4K, 8K without paying any cost.
@@ -167,7 +167,7 @@ function Description({}: Props) {
                 <AccordionTrigger>
                   Is downloading Instagram Video is illegal?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className=" font-medium">
                   No, Download Instagram Video in not illegal, if you use for
                   personal use or make a playlist of video in your phone gallery
                   then its fine no issue but if you use for commercial purpose
@@ -180,7 +180,7 @@ function Description({}: Props) {
                 <AccordionTrigger>
                   Can we download Instagram private video?
                 </AccordionTrigger>
-                <AccordionContent>
+                <AccordionContent className=" font-medium">
                   The answer is Yes! But on this page, we did not allow
                   Instagram private video downloading because private
                   downloading is a little bit tricky. To download Instagram
@@ -189,8 +189,10 @@ function Description({}: Props) {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h2 className="text-xl text-primary mb-4">Terms and Conditions</h2>
-            <p className="text-base text-justify text-wrap mb-6">
+            <h2 className="text-xl text-primary mb-4 mt-10 sm:text-center">
+              Terms and Conditions
+            </h2>
+            <p className="text-base text-justify text-wrap mb-6 font-medium">
               <span className="sm:mr-16"></span>
               This site is an educational purposes, this site is using
               information that is freely available. This site has not any right

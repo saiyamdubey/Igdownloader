@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body{
-  font-weight: 800;
   user-select: none;
   -webkit-user-select:none;
   scroll-behavior:smooth;
