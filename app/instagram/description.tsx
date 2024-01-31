@@ -189,6 +189,16 @@ function Description({}: Props) {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
+            <h2 className="text-xl text-primary mb-4">Terms and Conditions</h2>
+            <p className="text-base text-justify text-wrap mb-6">
+              <span className="sm:mr-16"></span>
+              This site is an educational purposes, this site is using
+              information that is freely available. This site has not any right
+              of videos or photos in which you have downloaded the only right of
+              respected users and all the copyright and trademark goes to them.
+              Instagram and Instagram logos are trademark and copyright of
+              Facebook Inc.
+            </p>
           </div>
         </div>
       </div>
