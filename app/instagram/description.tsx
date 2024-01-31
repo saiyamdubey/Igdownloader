@@ -12,7 +12,7 @@ type Props = {};
 function Description({}: Props) {
   return (
     <>
-      <div className=" max-w-full overflow-hidden">
+      <div className=" max-w-full 2xl:w-[75%] 2xl:m-auto overflow-hidden">
         <div className="py-10 px-4">
           <h1 className="2xl:text-5xl sm:text-2xl font-serif sm:font-extrabold  text-primary font-semibold text-center text-ellipsis my-6">
             Instagram Downloder App
@@ -71,6 +71,7 @@ function Description({}: Props) {
                     box.
                   </li>
                   <div className="my-10">
+                    
                     <img className="" src="mcstan1.png" alt="mcstan" />
                   </div>
                   <li>Now your video will be synchronized automatically.</li>
@@ -99,7 +100,7 @@ function Description({}: Props) {
               <li>Open the Instagram application</li>
               <li>Choose the video which you want to download</li>
               <div className="my-10">
-                <img src="ronaldo3.png" alt="ronaldoteam" />
+                <img src="ronaldo1.png" alt="ronaldoteam" />
               </div>
               <li>Click on the 3 dots.</li>
               <li>Popup open, Now click on Copy Link</li>
