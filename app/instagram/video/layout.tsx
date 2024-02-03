@@ -1,12 +1,15 @@
-export default function IglinksLayout({
+import Description from "../description";
+
+export default function RootLayout({
+  video,
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+  video: React.ReactNode;
+}>) {
   return (
-    <section>
-      <h1>saiyam dubey</h1>
+    <main className="flex flex-col overflow-hidden">
       {children}
-    </section>
+    </main>
   );
 }

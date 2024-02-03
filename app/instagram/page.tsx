@@ -1,31 +1,20 @@
 "use client";
 
 import React from "react";
-import Hero from "./hero";
 type Props = {};
 
-export default function Page({}: Props) {
+export default function Page({
+  video,
+}: Readonly<{
+  video: React.ReactNode;
+}>) {
   return (
     <>
       <div className=" flex-row  overflow-hidden flex justify-center items-center">
         <div className="flex-col">
-          <Hero />
-          
+          <h1>saiyam dubey loves Aishwarya gupta </h1>
         </div>
       </div>
     </>
   );
 }
-
-// export default function IglinksLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <section>
-//       <h1>saiyam dubey</h1>
-//       {children}
-//     </section>
-//   );
-// }

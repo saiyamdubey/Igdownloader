@@ -1,20 +1,32 @@
-// UseClientPage.js
-
 import React from "react";
+import Link from "next/link";
 
-type Props = {
-  Video: string; // Assuming Video is a string, change the type if necessary
-};
+type Props = {};
 
-const UseClientPage: React.FC<Props> = ({ Video }) => {
+function Page({}: Props) {
   return (
     <>
-      <div className="">
-        {Video}
-        <h1>hello from page of the iglinks</h1>
+      <div className="h-[90vh] flex justify-center items-center m-auto w-[90%]">
+        <div className="headlines">
+          <h1 className="">
+            Instagram <span className="">Downloader</span>
+          </h1>
+          <p className="">
+            Download Instagram Video, Photos, Reels, and Profile Pictures with
+            IG Downloader
+          </p>
+        </div>
+        <div className="linksheader">
+          <Link href="/instagram/video">Video</Link>
+          <Link href="/instagram/reel">Reels</Link>
+          <Link href="/instagram/igtv">Igtv</Link>
+          <Link href="/instagram/photo">Photo</Link>
+          <Link href="/instagram/post">Posts</Link>
+          <Link href="/instagram/story">Stories</Link>
+        </div>
       </div>
     </>
   );
-};
+}
 
-export default UseClientPage;
+export default Page;
