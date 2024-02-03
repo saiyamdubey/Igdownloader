@@ -1,4 +1,3 @@
-import Navbar from "@/components/navbar";
 import * as React from "react";
 
 export default function DatePickerWithPresets({

@@ -1,6 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { AiOutlineVideoCameraAdd } from "react-icons/ai";
+import { LiaPhotoVideoSolid } from "react-icons/lia";
+import { MdOutlineSlowMotionVideo } from "react-icons/md";
+import { PiFilmReel } from "react-icons/pi";
+import { MdOutlinePhotoCamera } from "react-icons/md";
+import { MdMusicVideo } from "react-icons/md";
+import { TbPhotoHeart } from "react-icons/tb";
 
 type Props = {};
 
@@ -23,55 +29,55 @@ function Hero({}: Props) {
             </span>
           </p>
         </div>
-        <div className="linksheader text-[18px] bg-gray-400 2xl:w-[78%] mt-6 [&>a]:px-[52px] [&>a]:py-3 [&>a]:ml-2  rounded-xl flex flex-row justify-evenly items-center">
+        <div className="linksheader text-[18px] bg-gray-400 2xl:w-[80%] mt-6 [&>a]:px-[35px] [&>a]:py-3 [&>a]:ml-3  rounded-xl flex flex-row justify-evenly items-center">
           <Link
-            className=" hover:bg-gradient-to-r hover:from-red-300 hover:to-pink-500 rounded-xl"
+            className="flex flex-row hover:bg-gradient-to-r hover:from-red-300 hover:to-pink-500 rounded-xl"
             href="/instagram/story"
           >
-            <Image
-                          src={"instagram.svg"}
-                          width={25}
-                          height={25}
-                          alt="ig"
-                          className="mx-2"
-                        />
+            <TbPhotoHeart className=" mr-4" />
             Highlights
           </Link>
 
           <Link
-            className="hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 rounded-xl"
+            className="flex flex-row hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 rounded-xl"
             href="/instagram/reel"
           >
+            <PiFilmReel className=" mr-4" />
             Reels
           </Link>
           <Link
-            className="hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 rounded-xl"
+            className="flex flex-row hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 rounded-xl"
             href="/instagram/story"
           >
+            <MdMusicVideo className=" mr-4" />
             Corausol
           </Link>
           <Link
-            className="hover:bg-gradient-to-r hover:from-red-400 hover:to-red-500 rounded-xl"
+            className="flex flex-row hover:bg-gradient-to-r hover:from-red-400 hover:to-red-500 rounded-xl"
             href="/instagram/video "
           >
+            <AiOutlineVideoCameraAdd className=" mr-4" />
             Video
           </Link>
           <Link
-            className="hover:bg-gradient-to-r hover:from-green-400 hover:to-green-500 rounded-xl"
+            className="flex flex-row hover:bg-gradient-to-r hover:from-green-400 hover:to-green-500 rounded-xl"
             href="/instagram/igtv"
           >
+            <MdOutlineSlowMotionVideo className=" mr-4" />
             Igtv
           </Link>
           <Link
-            className="hover:bg-gradient-to-r hover:from-indigo-400 hover:to-indigo-500 rounded-xl"
+            className="flex flex-row hover:bg-gradient-to-r hover:from-indigo-400 hover:to-indigo-500 rounded-xl"
             href="/instagram/post"
           >
+            <MdOutlinePhotoCamera className=" mr-4" />
             Posts
           </Link>
           <Link
-            className=" hover:bg-gradient-to-r hover:from-pink-700 hover:to-yellow-500  rounded-xl"
+            className="flex flex-row hover:bg-gradient-to-r hover:from-pink-700 hover:to-yellow-500 rounded-xl"
             href="/instagram/post"
           >
+            <LiaPhotoVideoSolid className=" mr-4" />
             Photo
           </Link>
         </div>
