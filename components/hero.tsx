@@ -22,7 +22,12 @@ function Hero({}: Props) {
               <span className="absolute bottom-0 left-0 w-full h-[3px] mt-[5px] bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500"></span>
             </span>
           </h1>
-          
+          <p className="text-2xl font-mono">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
+              Download Instagram Video, Photos, Reels, and Profile Pictures with
+              IG Downloader
+            </span>
+          </p>
         </div>
         <div className="linksheader text-[18px] bg-gray-400 2xl:w-[80%] mt-6 [&>a]:px-[35px] [&>a]:py-3 [&>a]:ml-3  rounded-xl flex flex-row justify-evenly items-center">
           <Link
