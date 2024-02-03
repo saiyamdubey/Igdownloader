@@ -22,14 +22,25 @@ function Hero({}: Props) {
             </span>
           </p>
         </div>
-        <div className="linksheader 2xl:w-dvw mt-6 p-2 [&>a]:p-10 bg-red-500 flex flex-row justify-center items-center">
-
-          <Link href="/instagram/video">Video</Link>
-          <Link href="/instagram/reel">Reels</Link>
-          <Link href="/instagram/igtv">Igtv</Link>
-          <Link href="/instagram/photo">Photo</Link>
-          <Link href="/instagram/post">Posts</Link>
-          <Link href="/instagram/story">Stories</Link>
+        <div className="linksheader 2xl:w-[70%] mt-6 [&>a]:px-10 [&>a]:py-3 [&>a]:ml-2  rounded-sm flex flex-row justify-around items-center">
+          <Link className=" hover:bg-slate-500" href="/instagram/video ">
+            Video
+          </Link>
+          <Link className=" hover:bg-slate-500" href="/instagram/reel">
+            Reels
+          </Link>
+          <Link className=" hover:bg-slate-500" href="/instagram/igtv">
+            Igtv
+          </Link>
+          <Link className=" hover:bg-slate-500" href="/instagram/photo">
+            Photo
+          </Link>
+          <Link className=" hover:bg-slate-500" href="/instagram/post">
+            Posts
+          </Link>
+          <Link className=" hover:bg-slate-500" href="/instagram/story">
+            Highlights
+          </Link>
         </div>
       </div>
     </>
