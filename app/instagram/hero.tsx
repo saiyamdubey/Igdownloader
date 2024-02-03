@@ -17,7 +17,7 @@ function Hero({}: Props) {
           </p>
         </div>
         <div className="linksheader">
-          <Link href="/video">Dashboard</Link>
+          <Link href="/">Dashboard</Link>
         </div>
       </div>
     </>
