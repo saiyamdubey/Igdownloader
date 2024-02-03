@@ -13,7 +13,7 @@ function Description({}: Props) {
     <>
       <div className=" max-w-full 2xl:w-[90%] 2xl:m-auto overflow-hidden">
         <div className="py-10 px-4 ">
-          <h1 className="2xl:text-5xl sm:text-2xl font-serif sm:font-extrabold  text-primary font-thin text-center text-ellipsis my-8">
+          <h1 className="2xl:text-5xl sm:text-2xl font-serif sm:font-extrabold font-thin text-center  my-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
             Instagram Downloader App
           </h1>
           <div className="px-2 mx-auto">
@@ -45,7 +45,7 @@ function Description({}: Props) {
               copy your video link.
             </p>
 
-            <h2 className="text-xl 2xl:text-4xl  2xl:my-8 mb-4 text-primary sm:text-center">
+            <h2 className="text-xl 2xl:text-4xl  2xl:my-8 mb-4 sm:text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
               Key Feature of Instagram video downloader:
             </h2>
             <div className=" 2xl:flex 2xl:flex-row">
@@ -76,7 +76,7 @@ function Description({}: Props) {
               </div>
             </div>
 
-            <h2 className="text-xl 2xl:text-4xl 2xl:my-8 text-primary mb-4 sm:text-center">
+            <h2 className="text-xl 2xl:text-4xl 2xl:my-8 text-primary mb-4 sm:text-center bg-gradient-to-r bg-clip-text  text-transparent from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
               How to Download Instagram Video?
             </h2>
             <p className="2xl:text-2xl text-justify text-wrap mb-6 ">
@@ -120,7 +120,7 @@ function Description({}: Props) {
                 />
               </div>
             </div>
-            <h2 className="text-2xl 2xl:text-4xl  2xl:my-8 text-primary mb-4 sm:text-center">
+            <h2 className="text-2xl 2xl:text-4xl  2xl:my-8 text-primary mb-4 sm:text-center bg-gradient-to-r bg-clip-text  text-transparent from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
               Copy Link for Download Video Instagram?
             </h2>
             <p className="sm:text-[15px] text-justify 2xl:text-2xl text-wrap mb-6">
@@ -139,17 +139,17 @@ function Description({}: Props) {
               <li>Hurray! Your Instagram video downloading link is copied.</li>
               <li>Happy Downloding journey Boss 🦁 ...</li>
             </ul>
-            <h2 className="text-xl 2xl:text-4xl  2xl:my-12 text-primary mb-4 text-center">
+            <h2 className="text-xl 2xl:text-4xl  2xl:my-12 text-primary mb-4 text-center bg-clip-text  text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
               Frequently Asked Question
             </h2>
-            <Accordion
-              className=""
+            <Accordion 
+              className="max-w-[100%] min-w-[30rem]"
               type="single"
               collapsible
               orientation="horizontal"
             >
               <AccordionItem value="item-1">
-                <AccordionTrigger className="2xl:text-[22px] hover:text-primary">
+                <AccordionTrigger className="2xl:text-[22px] bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
                   How to download Instagram videos in HD on Android?
                 </AccordionTrigger>
                 <AccordionContent className="2xl:text-[22px] 2xl:py-5 2xl:px-2  leading-8">
@@ -159,7 +159,7 @@ function Description({}: Props) {
               </AccordionItem>
 
               <AccordionItem value="item-2">
-                <AccordionTrigger className="2xl:text-[22px] hover:text-primary">
+                <AccordionTrigger className="2xl:text-[22px] bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
                   Download Instagram Video in Original Quality.
                 </AccordionTrigger>
                 <AccordionContent className="2xl:text-[22px] 2xl:py-5 2xl:px-2  leading-8">
@@ -173,7 +173,7 @@ function Description({}: Props) {
               </AccordionItem>
 
               <AccordionItem value="item-3">
-                <AccordionTrigger className="2xl:text-[22px] hover:text-primary">
+                <AccordionTrigger className="2xl:text-[22px] bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
                   How can be download video Instagram?
                 </AccordionTrigger>
                 <AccordionContent className="2xl:text-[22px] 2xl:py-5 2xl:px-2  leading-8">
@@ -187,7 +187,7 @@ function Description({}: Props) {
               </AccordionItem>
 
               <AccordionItem value="item-4">
-                <AccordionTrigger className="2xl:text-[22px] hover:text-primary">
+                <AccordionTrigger className="2xl:text-[22px] bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
                   What is Instagram Video Downloader?
                 </AccordionTrigger>
                 <AccordionContent className="2xl:text-[22px] 2xl:py-5 2xl:px-2  leading-8">
@@ -198,7 +198,7 @@ function Description({}: Props) {
               </AccordionItem>
 
               <AccordionItem value="item-5">
-                <AccordionTrigger className="2xl:text-[22px] hover:text-primary">
+                <AccordionTrigger className="2xl:text-[22px] bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
                   Do I have to pay to download videos from Instagram?
                 </AccordionTrigger>
                 <AccordionContent className="2xl:text-[22px] 2xl:py-5 2xl:px-2  leading-8">
@@ -209,7 +209,7 @@ function Description({}: Props) {
               </AccordionItem>
 
               <AccordionItem value="item-6">
-                <AccordionTrigger className="2xl:text-[22px] hover:text-primary">
+                <AccordionTrigger className="2xl:text-[22px] bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
                   Is downloading Instagram Video is illegal?
                 </AccordionTrigger>
                 <AccordionContent className="2xl:text-[22px] 2xl:py-5 2xl:px-2  leading-8">
@@ -222,7 +222,7 @@ function Description({}: Props) {
               </AccordionItem>
 
               <AccordionItem value="item-7">
-                <AccordionTrigger className="2xl:text-[22px] hover:text-primary">
+                <AccordionTrigger className="2xl:text-[22px] bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
                   Can we download Instagram private video?
                 </AccordionTrigger>
                 <AccordionContent className="2xl:text-[22px] 2xl:py-5 2xl:px-2  leading-8">
@@ -234,7 +234,7 @@ function Description({}: Props) {
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
-            <h2 className="text-2xl 2xl:text-4xl  2xl:my-8 text-primary mb-4 mt-10 text-center">
+            <h2 className="text-2xl 2xl:text-4xl  2xl:my-8 mb-4 mt-10 text-center  bg-clip-text  text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
               Terms and Conditions
             </h2>
             <p className="sm:text-[15px] 2xl:text-2xl  text-justify text-wrap mb-6 font-medium">
