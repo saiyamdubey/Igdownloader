@@ -41,7 +41,7 @@ function Navbar({}: Props) {
     <div className="2xl:flex w-dvw sm:flex sm:justify-between items-center justify-evenly font-mono sm:p-2  border-primary border-b-[1px] pt-3">
       <div className="logo mb-3 sm:ml-8 sm:mt-3  ">
         <Link className="flex" href="/" prefetch={true}>
-          <h2 className="scroll-m-10 sm:text-[20px] 2xl:text-3xl 2xl:font-black tracking-wider first:mt-0  hover:italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
+          <h2 className="scroll-m-10 sm:text-[20px] 2xl:text-3xl 2xl:font-black tracking-wider first:mt-0  hover:italic bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-pink-400 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
             Insta
           </h2>
           <h3 className="scroll-m-10 sm:text-[20px] 2xl:text-3xl font-bold tracking-widest ">

@@ -3,9 +3,13 @@
 @tailwind utilities;
 
 body{
+  
   user-select: none;
   -webkit-user-select:none;
-  scroll-behavior:smooth;
+}
+body::-webkit-scrollbar {
+  display: none;
+  scroll-snap-type: none;
 }
 
 /* Orange */

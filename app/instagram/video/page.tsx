@@ -19,7 +19,7 @@ function Searchbar({}: Props) {
       <div className="flex justify-center items-center m-auto ">
         <div className="mt-10 input-group flex items-center">
           <button
-            className="flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-600 text-white text-base  cursor-pointer transition-colors duration-500  border-black ease-in-out  focus:border-gray-700 "
+            className="flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-700 text-white text-base  cursor-pointer transition-colors duration-500  border-black ease-in-out  focus:border-gray-700 "
             onClick={() => pasteOrClear()}
           >
             <GoPaste className="mt-1 mr-3" />

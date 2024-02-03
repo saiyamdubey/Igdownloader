@@ -29,12 +29,12 @@ function Hero({}: Props) {
             </span>
           </p>
         </div>
-        <div className="linksheader text-[18px] bg-gray-400 2xl:w-[80%] mt-6 [&>a]:px-[35px] [&>a]:py-3 [&>a]:ml-3  rounded-xl flex flex-row justify-evenly items-center">
+        <div className="linksheader text-white text-[18px] bg-gray-800 2xl:w-[80%] mt-6 [&>a]:px-[35px] [&>a]:py-3 [&>a]:ml-3  rounded-xl flex flex-row justify-evenly items-center">
           <Link
             className="flex flex-row hover:bg-gradient-to-r hover:from-red-300 hover:to-pink-500 rounded-xl"
             href="/instagram/story"
           >
-            <TbPhotoHeart className="mt-1  mr-4" />
+            <TbPhotoHeart className="mt-1  mr-5" />
             Highlights
           </Link>
 

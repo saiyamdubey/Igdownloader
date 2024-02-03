@@ -18,7 +18,7 @@ export default function Footer() {
       >
         <div className="2xl:mt-10  2xl:ml-12 sm:w-64 2xl:w-1/5 text-center ">
           <Link className="flex justify-center mb-6" href="/" prefetch={true}>
-            <h2 className="scroll-m-10 sm:text-[30px] 2xl:text-3xl sm:ml-2 font-black tracking-wider first:mt-0 text-primary  hover:italic">
+            <h2 className="scroll-m-10 sm:text-[30px] 2xl:text-3xl sm:ml-2 font-black tracking-wider first:mt-0  hover:italic bg-clip-text  text-transparent bg-gradient-to-r from-blue-700  to-pink-400 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
               Insta
             </h2>
             <h3 className=" scroll-m-10 sm:text-[30px] 2xl:text-3xl font-bold tracking-widest  ">
@@ -36,7 +36,10 @@ export default function Footer() {
           </p>
           <div className="flex mt-4 sm:flex-col 2xl:flex-col">
             <Input type="email" placeholder="Email" />
-            <Button variant="outline" className="bg-primary  sm:mt-3 2xl:mt-4">
+            <Button
+              variant="outline"
+              className="2xl:text-base bg-gradient-to-r from-blue-700  to-pink-400 hover:from-yellow-600 hover:via-yellow-700 hover:to-green-700  sm:mt-3 2xl:mt-4"
+            >
               Subscribe
             </Button>
           </div>
@@ -148,7 +151,7 @@ export default function Footer() {
                   Instagram Profile Download
                 </Link>
               </li>
-              
+
               <li>
                 <Link
                   href={"/"}
