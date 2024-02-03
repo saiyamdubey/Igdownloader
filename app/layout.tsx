@@ -3,6 +3,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
+import Description from "./instagram/description";
+import Hero from "@/components/hero";
+import Searchbar from "./instagram/video/page";
 
 export const metadata: Metadata = {
   title:
@@ -26,7 +29,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
+          <Hero />
           {children}
+          <Searchbar />
+          <Description />
           <Footer />
         </ThemeProvider>
       </body>

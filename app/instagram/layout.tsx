@@ -15,9 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <main className="flex flex-col overflow-hidden">
-      <Hero />
       {children}
-      <Description />
     </main>
   );
 }

@@ -38,7 +38,7 @@ function Navbar({}: Props) {
   };
 
   return (
-    <div className="2xl:flex w-dvw sm:flex sm:justify-between items-center justify-evenly font-mono sm:p-2  border-primary border-b-[1px] ">
+    <div className="2xl:flex w-dvw sm:flex sm:justify-between items-center justify-evenly font-mono sm:p-2  border-primary border-b-[1px] pt-3">
       <div className="logo mb-3 sm:ml-8 sm:mt-3  ">
         <Link className="flex" href="/" prefetch={true}>
           <h2 className="scroll-m-10 sm:text-[20px] 2xl:text-3xl 2xl:font-black tracking-wider first:mt-0 text-primary hover:italic">
