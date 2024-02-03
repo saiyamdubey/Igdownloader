@@ -22,23 +22,47 @@ function Hero({}: Props) {
             </span>
           </p>
         </div>
-        <div className="linksheader 2xl:w-[70%] mt-6 [&>a]:px-10 [&>a]:py-3 [&>a]:ml-2  rounded-sm flex flex-row justify-around items-center">
-          <Link className=" hover:bg-slate-500" href="/instagram/video ">
-            Video
-          </Link>
-          <Link className=" hover:bg-slate-500" href="/instagram/reel">
-            Reels
-          </Link>
-          <Link className=" hover:bg-slate-500" href="/instagram/igtv">
-            Igtv
-          </Link>
-          <Link className=" hover:bg-slate-500" href="/instagram/photo">
+        <div className="linksheader text-[18px] bg-gray-400 2xl:w-[80%] mt-6 [&>a]:px-[52px] [&>a]:py-3 [&>a]:ml-2  rounded-xl flex flex-row justify-evenly items-center">
+          <Link
+            className="mr-2 hover:bg-gradient-to-r hover:from-pink-700 hover:to-yellow-500  rounded-xl"
+            href="/instagram/photo"
+          >
             Photo
           </Link>
-          <Link className=" hover:bg-slate-500" href="/instagram/post">
+          <Link
+            className="hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 rounded-xl"
+            href="/instagram/reel"
+          >
+            Reels
+          </Link>
+          <Link
+            className="hover:bg-gradient-to-r hover:from-yellow-300 hover:to-yellow-500 rounded-xl"
+            href="/instagram/corausol"
+          >
+            Corausol
+          </Link>
+          <Link
+            className="hover:bg-gradient-to-r hover:from-red-300 hover:to-red-500 rounded-xl"
+            href="/instagram/video "
+          >
+            Video
+          </Link>
+          <Link
+            className="hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 rounded-xl"
+            href="/instagram/igtv"
+          >
+            IGTV
+          </Link>
+          <Link
+            className="hover:bg-gradient-to-r hover:from-indigo-300 hover:to-indigo-500 rounded-xl"
+            href="/instagram/post"
+          >
             Posts
           </Link>
-          <Link className=" hover:bg-slate-500" href="/instagram/story">
+          <Link
+            className="hover:bg-gradient-to-r hover:from-pink-300 hover:to-pink-500 rounded-xl"
+            href="/instagram/story"
+          >
             Highlights
           </Link>
         </div>
