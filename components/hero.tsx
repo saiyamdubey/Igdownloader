@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {};
 
 function Hero({}: Props) {
   return (
     <>
-      <div className="h-[60vh]  flex flex-col justify-start items-center m-auto w-[95%]">
+      <div className="  flex flex-col justify-start items-center m-auto w-[95%]">
         <div className="headlines  t">
           <h1 className="text-center text-5xl mt-12 relative mb-4 ">
             Instagram{"  "}
@@ -22,13 +23,21 @@ function Hero({}: Props) {
             </span>
           </p>
         </div>
-        <div className="linksheader text-[18px] bg-gray-400 2xl:w-[80%] mt-6 [&>a]:px-[52px] [&>a]:py-3 [&>a]:ml-2  rounded-xl flex flex-row justify-evenly items-center">
+        <div className="linksheader text-[18px] bg-gray-400 2xl:w-[78%] mt-6 [&>a]:px-[52px] [&>a]:py-3 [&>a]:ml-2  rounded-xl flex flex-row justify-evenly items-center">
           <Link
-            className="mr-2 hover:bg-gradient-to-r hover:from-pink-700 hover:to-yellow-500  rounded-xl"
-            href="/instagram/photo"
+            className=" hover:bg-gradient-to-r hover:from-red-300 hover:to-pink-500 rounded-xl"
+            href="/instagram/story"
           >
-            Photo
+            <Image
+                          src={"instagram.svg"}
+                          width={25}
+                          height={25}
+                          alt="ig"
+                          className="mx-2"
+                        />
+            Highlights
           </Link>
+
           <Link
             className="hover:bg-gradient-to-r hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 rounded-xl"
             href="/instagram/reel"
@@ -36,34 +45,34 @@ function Hero({}: Props) {
             Reels
           </Link>
           <Link
-            className="hover:bg-gradient-to-r hover:from-yellow-300 hover:to-yellow-500 rounded-xl"
-            href="/instagram/corausol"
+            className="hover:bg-gradient-to-r hover:from-yellow-400 hover:to-yellow-500 rounded-xl"
+            href="/instagram/story"
           >
             Corausol
           </Link>
           <Link
-            className="hover:bg-gradient-to-r hover:from-red-300 hover:to-red-500 rounded-xl"
+            className="hover:bg-gradient-to-r hover:from-red-400 hover:to-red-500 rounded-xl"
             href="/instagram/video "
           >
             Video
           </Link>
           <Link
-            className="hover:bg-gradient-to-r hover:from-green-300 hover:to-green-500 rounded-xl"
+            className="hover:bg-gradient-to-r hover:from-green-400 hover:to-green-500 rounded-xl"
             href="/instagram/igtv"
           >
-            IGTV
+            Igtv
           </Link>
           <Link
-            className="hover:bg-gradient-to-r hover:from-indigo-300 hover:to-indigo-500 rounded-xl"
+            className="hover:bg-gradient-to-r hover:from-indigo-400 hover:to-indigo-500 rounded-xl"
             href="/instagram/post"
           >
             Posts
           </Link>
           <Link
-            className="hover:bg-gradient-to-r hover:from-pink-300 hover:to-pink-500 rounded-xl"
-            href="/instagram/story"
+            className=" hover:bg-gradient-to-r hover:from-pink-700 hover:to-yellow-500  rounded-xl"
+            href="/instagram/post"
           >
-            Highlights
+            Photo
           </Link>
         </div>
       </div>

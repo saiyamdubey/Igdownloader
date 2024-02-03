@@ -1,6 +1,5 @@
 import Navbar from "@/components/navbar";
 import * as React from "react";
-import Footer from "@/components/footer";
 
 export default function DatePickerWithPresets({
   children,
