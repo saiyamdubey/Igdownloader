@@ -17,7 +17,12 @@ function Hero({}: Props) {
           </p>
         </div>
         <div className="linksheader">
-          <Link href="/">Dashboard</Link>
+          <Link href="/instagram/iglinks">Video</Link>
+          <Link href="/instagram/iglinks">Reels</Link>
+          <Link href="/instagram/iglinks">Profile</Link>
+          <Link href="/instagram/iglinks">Photo</Link>
+          <Link href="/instagram/iglinks">Posts</Link>
+          <Link href="/instagram/iglinks">Stories</Link>
         </div>
       </div>
     </>

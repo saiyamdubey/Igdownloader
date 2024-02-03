@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Description from "./description";
 
 export const metadata: Metadata = {
   title: "Instant Downloader videos  ",
@@ -11,5 +12,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return <main className="flex flex-col overflow-hidden">{children}</main>;
+  return (
+    <main className="flex flex-col overflow-hidden">
+      {children}
+      <Description />
+    </main>
+  );
 }
