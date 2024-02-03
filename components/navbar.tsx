@@ -54,7 +54,7 @@ function Navbar({}: Props) {
       </div>
       <div className="links flex flex-row">
         <div className="mainlinks ml-4">
-          <ol className="flex my-2 ml-8 sm:hidden  [&>a]:mr-8 [&>a]:font-semibold [&>a]:cursor-pointer  [&>]:border-orange-200">
+          <ol className="flex my-2 ml-8 sm:hidden text-[17px]  [&>a]:mr-6 [&>a]:font-bold [&>a]:cursor-pointer  [&>a]:border-primary">
             <Link
               className="hover:border-b-[1px] pb-0"
               href="/instagram/"

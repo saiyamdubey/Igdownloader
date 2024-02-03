@@ -36,7 +36,7 @@ function Searchbar({}: Props) {
           ></input>
 
           <input
-            className="button--submit border-2 min-h-10 rounded-r-[3px] px-4 py-2 bg-black text-white text-base cursor-pointer    border-black ease-in-out   bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500"
+            className="button--submit border-2 min-h-10 rounded-r-[3px] px-4 py-2 bg-black text-white text-base cursor-pointer    border-black ease-in-out   bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
             value="Download"
             type="submit"
           ></input>
