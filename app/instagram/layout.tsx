@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Description from "./description";
+import Hero from "@/components/hero";
 
 export const metadata: Metadata = {
   title: "Instant Downloader videos  ",
@@ -16,6 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <main className="flex flex-col overflow-hidden">
+      <Hero />
       {children}
       <Description />
     </main>

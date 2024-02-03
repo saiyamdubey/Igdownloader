@@ -1,7 +1,6 @@
 import Description from "../description";
 
 export default function RootLayout({
-  video,
   children,
 }: Readonly<{
   children: React.ReactNode;
