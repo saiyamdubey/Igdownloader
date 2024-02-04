@@ -1,19 +1,9 @@
-import Instaloader from "instaloader"
-
-async function Download(reelUrl: string) {
-  const L = new Instaloader();
+export async function Download(url: string) {
   try {
-    const post = await L.getPostByUrl(reelUrl);
-    const videoUrl = post.video_url;
-
-    // You can implement your download logic here
-    // For simplicity, let's just log the video URL
-    console.log("Video URL:", videoUrl);
-  } catch (err) {
-    console.error("Error downloading reel:", err);
+    const response = await fetch(`https://www.google.com/`);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error downloading reel:", error);
   }
 }
-// pm i --save-dev @types/instaloader
-module.exports = {
-  Download,
-};
