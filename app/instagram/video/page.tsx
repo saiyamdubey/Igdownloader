@@ -4,12 +4,28 @@
 
 import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
-import { Download } from "@/app/instagram/video/videodown";
+// import { Download } from "@/app/instagram/video/videodown";
 
 type Props = {};
 
+async function downloadReel(url: string) {
+  try {
+    const response = await fetch(
+      `/api/download?url=${encodeURIComponent(url)}`
+    );
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.error("Error downloading reel:", error);
+  }
+}
+
 function Searchbar({}: Props) {
   const [inputValue, setInputValue] = useState("");
+
+  const handleDownload = () => {
+    downloadReel(inputValue);
+  };
 
   const pasteOrClear = () => {
     if (inputValue === "") {
@@ -40,7 +56,7 @@ function Searchbar({}: Props) {
           ></input>
 
           <input
-            onClick={() => Download(inputValue)}
+            onClick={handleDownload}
             className="button--submit border-2 min-h-10 rounded-r-[3px] px-4 py-2 bg-black text-white text-base cursor-pointer    border-black ease-in-out   bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
             value="Download"
             type="submit"
