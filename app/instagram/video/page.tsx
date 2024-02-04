@@ -36,31 +36,35 @@ function Searchbar({}: Props) {
   };
   return (
     <>
-      <div className="flex overflow-hidden justify-center items-center m-auto ">
-        <div className="mt-10 input-group flex items-center">
+      <div className="flex  overflow-hidden justify-center items-center m-auto ">
+        <div className="mt-10  input-group flex items-center">
           <button
-            className="flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-700 text-white text-base  cursor-pointer transition-colors duration-500  border-black ease-in-out  focus:border-gray-700 "
+            className="absolute sm:mb-[70px] ml-1 flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-500 text-white text-base  cursor-pointer transition-colors duration-500  border-black ease-in-out  focus:border-gray-700 "
             onClick={() => pasteOrClear()}
           >
-            <GoPaste className="mt-1 mr-3" />
-            {inputValue === "" ? " Paste" : "Clear"}
+            <GoPaste className="mt-1 mr-3 sm:mr-0 " />
+            <h1 className="sm:hidden">
+              {inputValue === "" ? " Paste" : "Clear"}
+            </h1>
           </button>
-          <input
-            className="input pl-4 w-[40rem] py-2 placeholder:text-base placeholder:font-mono border-2 border-black"
-            id="Email"
-            name="Email"
-            type="email"
-            value={inputValue}
-            placeholder="https://www.instagram.com/p/Cx8FpSlyXAC/"
-            onChange={(e) => setInputValue(e.target.value)}
-          ></input>
+          <div className="flex sm:flex-col sm:justify-center sm:items-center">
+            <input
+              className="input 2xl:pl-36 sm:pl-20 min-h-10 w-[40rem] sm:w-[24rem] py-3 placeholder:text-base sm:placeholder:text-sm placeholder:font-mono border-2 border-black"
+              id="Email"
+              name="Email"
+              type="email"
+              value={inputValue}
+              placeholder="instagram.com/p/Cx8FpSlyXAC/"
+              onChange={(e) => setInputValue(e.target.value)}
+            ></input>
 
-          <input
-            onClick={handleDownload}
-            className="button--submit border-2 min-h-10 rounded-r-[3px] px-4 py-2 bg-black text-white text-base cursor-pointer    border-black ease-in-out   bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
-            value="Download"
-            type="submit"
-          ></input>
+            <input
+              onClick={handleDownload}
+              className="button--submit border-2 sm:mt-5 sm:w-[10rem] min-h-10 rounded-r-[3px] sm:rounded-[18px] px-4 py-3 bg-black text-white text-base cursor-pointer    border-black ease-in-out   bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
+              value="Download"
+              type="submit"
+            ></input>
+          </div>
         </div>
       </div>
     </>
