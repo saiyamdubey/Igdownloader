@@ -3,22 +3,18 @@
 import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
 
-import { useToast } from "@/components/ui/use-toast";
-import { ToastAction } from "@/components/ui/toast";
-import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 type Props = {};
 
-
 async function downloadReel(url: string) {
-  
   try {
     const response = await fetch(
       `/api/download?url=${encodeURIComponent(url)}`
     );
     const data = await response.json();
     if (data.error) {
-      alert("error");
+      toast("Check the Provided Link");
     }
     console.log(data);
   } catch (error) {
@@ -27,7 +23,6 @@ async function downloadReel(url: string) {
 }
 
 function Searchbar({}: Props) {
-  const { toast } = useToast();
   const [inputValue, setInputValue] = useState("");
 
   const handleDownload = () => {
@@ -65,7 +60,6 @@ function Searchbar({}: Props) {
               placeholder="instagram.com/p/Cx8FpSlyXAC/"
               onChange={(e) => setInputValue(e.target.value)}
             ></input>
-
             <input
               onClick={handleDownload}
               className="button--submit border-2 sm:mt-5 sm:w-[10rem] min-h-10 rounded-r-[3px] sm:rounded-[18px] px-4 py-3 bg-black text-white text-base cursor-pointer    border-black ease-in-out   bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
