@@ -21,8 +21,21 @@ function Searchbar({}: Props) {
         toast("Check the Provided Link");
       }
       setvideodata(data);
+      // console.log("full data : ", data);
+      // console.log("data > graphql : ", data.graphql);
+      // console.log(
+      //   "data > graphql > shortcode_media : ",
+      //   data.graphql.shortcode_media
+      // );
 
-      console.log(data);
+      // console.log(
+      //   "data > graphql > shortcode_media > display_resources : ",
+      //   data.graphql.shortcode_media.display_resources
+      // );
+      console.log(
+        "data > graphql > shortcode_media > display_resources : ",
+        data.graphql.shortcode_media.display_resources[0].src
+      );
     } catch (error) {
       console.error(error);
     }
