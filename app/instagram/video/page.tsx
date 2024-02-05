@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
 
-
 type Props = {};
 
 async function downloadReel(url: string) {
@@ -47,7 +46,7 @@ function Searchbar({}: Props) {
           </button>
           <div className="flex sm:flex-col sm:justify-center sm:items-center">
             <input
-              className="input 2xl:pl-36 sm:pl-20 min-h-10 w-[40rem] sm:w-[24rem] py-3 placeholder:text-base sm:placeholder:text-sm placeholder:font-mono border-2 border-black"
+              className="input 2xl:pl-32 sm:pl-20 min-h-10 w-[48rem] sm:w-[24rem] py-3 placeholder:text-base sm:placeholder:text-sm placeholder:font-mono border-2 border-black"
               id="Email"
               name="Email"
               type="email"
@@ -66,7 +65,6 @@ function Searchbar({}: Props) {
         </div>
         <div className="downloadmediadata">
           <h1>Here is the Fucking links to download </h1>
-          
         </div>
       </div>
     </>

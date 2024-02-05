@@ -2,7 +2,13 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { url } = req.query;
+  let { url } = req.query;
+
+  // Remove ?utm_source=ig_web_copy_link from the URL if it exists
+  if (typeof url === 'string') {
+    url = url.replace(/\?utm_source=ig_web_copy_link$/, '');
+  }
+
   try {
     const response = await fetch(url as string);
     const data = await response.json();
