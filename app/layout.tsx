@@ -6,6 +6,7 @@ import Navbar from "@/components/navbar";
 import Description from "./instagram/description";
 import Hero from "@/components/hero";
 import Searchbar from "./instagram/video/page";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title:
@@ -31,6 +32,7 @@ export default function RootLayout({
           <Navbar />
           <Hero />
           {children}
+          <Toaster />
           <Searchbar />
           <Description />
           <Footer />

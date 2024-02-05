@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
+import { toast } from "sonner";
 
 type Props = {};
 
@@ -13,6 +14,7 @@ async function downloadReel(url: string) {
     const data = await response.json();
     console.log(data);
   } catch (error) {
+    toast("Event has been created.");
     console.error("Error downloading reel:", error);
   }
 }
@@ -21,6 +23,8 @@ function Searchbar({}: Props) {
   const [inputValue, setInputValue] = useState("");
 
   const handleDownload = () => {
+    // toast("");
+
     downloadReel(inputValue);
   };
 
