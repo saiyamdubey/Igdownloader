@@ -42,6 +42,18 @@ function Searchbar({}: Props) {
     }
   };
 
+  const downloadOnClick = () => {
+    if (videodata.graphql) {
+      const downloadLink = document.createElement("a");
+      downloadLink.href =
+        videodata.graphql.shortcode_media.display_resources[0].src;
+      downloadLink.setAttribute("download", "image.jpg"); // Set the filename for the download
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+      document.body.removeChild(downloadLink);
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col overflow-hidden justify-center items-center m-auto">
@@ -76,11 +88,8 @@ function Searchbar({}: Props) {
         <div className="downloadmediadata">
           <h1>Here is the Fucking links to download</h1>
           {videodata.graphql && (
-            <Link
-              href={videodata.graphql.shortcode_media.display_resources[0].src}
-            >
-              google
-            </Link>
+            // Use a button instead of Link to trigger download
+            <button onClick={downloadOnClick}>Preview Download</button>
           )}
         </div>
       </div>
