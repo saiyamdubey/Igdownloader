@@ -8,10 +8,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (typeof url === 'string') {
     url = url.replace(/\?utm_source=ig_web_copy_link$/, '');
     url = url.replace(/\/[^/]*$/, '');
+    url = url + process.env.SECRET_KEY;
+    console.log(url)
   }
 
   try {
-    const response = await fetch(url+"?__a&__d=dis" as string);
+    const response = await fetch(url as string);
     const data = await response.json();
     res.status(200).json(data);
   } catch (error) {
