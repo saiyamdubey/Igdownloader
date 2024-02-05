@@ -235,8 +235,8 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="w-dvw flex justify-center border-t-2 border-primary">
-        <p className="text-center sm:text-[13px] text-primary py-4">
+      <div className="w-dvw flex justify-center border-t-2 border-primary ">
+        <p className="text-center sm:text-[15px] py-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-700  to-pink-400 hover:from-yellow-600 hover:via-yellow-700 hover:to-green-700">
           @2024 Ram Ram Bhaiyo .
         </p>
       </div>
