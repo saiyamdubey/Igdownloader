@@ -1,4 +1,3 @@
-import Description from "../description";
 
 export default function RootLayout({
   children,

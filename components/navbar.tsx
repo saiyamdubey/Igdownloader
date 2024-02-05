@@ -186,7 +186,7 @@ function Navbar({}: Props) {
                       </Link>
                     </ul>
                     <div className="sm:mt-10">
-                      <Button className="sm:ml-6 sm:justify-between sm:text-[18px] sm:p-7 sm:font-extrabold">
+                      <Button className="sm:ml-6 sm:justify-between sm:text-[18px] sm:p-7 sm:font-extrabold bg-gradient-to-r from-blue-700  to-pink-400 hover:from-yellow-600 hover:via-yellow-700 hover:to-green-700">
                         <GiMoneyStack className="mr-1 pr-2 h-10 w-10" /> Donate
                         Me
                       </Button>

@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Description from "./description";
-import Hero from "@/components/hero";
 
 export const metadata: Metadata = {
   title: "Instant Downloader videos  ",

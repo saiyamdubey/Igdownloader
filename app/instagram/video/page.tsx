@@ -1,10 +1,8 @@
 "use client";
 
-// https://www.instagram.com/p/Cx8FpSlyXAC/
-
 import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
-// import { Download } from "@/app/instagram/video/videodown";
+
 
 type Props = {};
 
@@ -36,11 +34,11 @@ function Searchbar({}: Props) {
   };
   return (
     <>
-      <div className="flex  overflow-hidden justify-center items-center m-auto ">
+      <div className="flex flex-col overflow-hidden justify-center items-center m-auto ">
         <div className="mt-10  input-group flex items-center">
           <button
             className="absolute sm:mb-[70px] ml-1 flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-500 text-white text-base  cursor-pointer transition-colors duration-500  border-black ease-in-out  focus:border-gray-700 "
-            onClick={() => pasteOrClear()}
+            onClick={pasteOrClear}
           >
             <GoPaste className="mt-1 mr-3 sm:mr-0 " />
             <h1 className="sm:hidden">
@@ -65,6 +63,10 @@ function Searchbar({}: Props) {
               type="submit"
             ></input>
           </div>
+        </div>
+        <div className="downloadmediadata">
+          <h1>Here is the Fucking links to download </h1>
+          
         </div>
       </div>
     </>

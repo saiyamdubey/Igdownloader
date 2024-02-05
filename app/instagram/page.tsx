@@ -12,7 +12,7 @@ export default function Page({
     <>
       <div className=" flex-row  overflow-hidden flex justify-center items-center">
         <div className="flex-col">
-          <h1>saiyam dubey loves Aishwarya gupta </h1>
+          <h1>saiyam dubey </h1>
         </div>
       </div>
     </>
