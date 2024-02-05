@@ -9,7 +9,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     url = url.replace(/\?utm_source=ig_web_copy_link$/, '');
     url = url.replace(/\/[^/]*$/, '');
     url = url + process.env.SECRET_KEY;
-    console.log(url)
+    // alert(url)
+    // console.log(url)
   }
 
   try {
