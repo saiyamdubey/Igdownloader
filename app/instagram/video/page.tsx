@@ -7,23 +7,26 @@ import { toast } from "sonner";
 
 type Props = {};
 
-async function downloadReel(url: string) {
-  try {
-    const response = await fetch(
-      `/api/download?url=${encodeURIComponent(url)}`
-    );
-    const data = await response.json();
-    if (data.error) {
-      toast("Check the Provided Link");
-    }
-    console.log(data);
-  } catch (error) {
-    console.error(error);
-  }
-}
-
 function Searchbar({}: Props) {
   const [inputValue, setInputValue] = useState("");
+  const [videodata, setvideodata] = useState<any>({});
+
+  async function downloadReel(url: string) {
+    try {
+      const response = await fetch(
+        `/api/download?url=${encodeURIComponent(url)}`
+      );
+      const data = await response.json();
+      if (data.error) {
+        toast("Check the Provided Link");
+      }
+      setvideodata(data);
+
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   const handleDownload = () => {
     downloadReel(inputValue);
@@ -69,7 +72,8 @@ function Searchbar({}: Props) {
           </div>
         </div>
         <div className="downloadmediadata">
-          <h1>Here is the Fucking links to download </h1>
+          <h1>Here is the Fucking links to download</h1>
+          <h2>{JSON.stringify(videodata)}</h2>
         </div>
       </div>
     </>
