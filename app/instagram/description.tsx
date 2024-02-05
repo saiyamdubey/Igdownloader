@@ -143,13 +143,13 @@ function Description({}: Props) {
               Frequently Asked Question
             </h2>
             <Accordion 
-              className="max-w-[100%] min-w-[30rem]"
+              className=" max-w-[100%] min-w-[20rem] items-center"
               type="single"
               collapsible
               orientation="horizontal"
             >
               <AccordionItem value="item-1">
-                <AccordionTrigger className="2xl:text-[22px] bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
+                <AccordionTrigger className="2xl:text-[22px] bg-clip-text text-transparent bg-gradient-to-r from-blue-700  via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
                   How to download Instagram videos in HD on Android?
                 </AccordionTrigger>
                 <AccordionContent className="2xl:text-[22px] 2xl:py-5 2xl:px-2  leading-8">
