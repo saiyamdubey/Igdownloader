@@ -2,29 +2,35 @@
 
 import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
-import { toast } from "sonner";
+
+import { useToast } from "@/components/ui/use-toast";
+import { ToastAction } from "@/components/ui/toast";
+import { Button } from "@/components/ui/button";
 
 type Props = {};
 
+
 async function downloadReel(url: string) {
+  
   try {
     const response = await fetch(
       `/api/download?url=${encodeURIComponent(url)}`
     );
     const data = await response.json();
+    if (data.error) {
+      alert("error");
+    }
     console.log(data);
   } catch (error) {
-    toast("Event has been created.");
-    console.error("Error downloading reel:", error);
+    console.error(error);
   }
 }
 
 function Searchbar({}: Props) {
+  const { toast } = useToast();
   const [inputValue, setInputValue] = useState("");
 
   const handleDownload = () => {
-    // toast("");
-
     downloadReel(inputValue);
   };
 
@@ -35,6 +41,7 @@ function Searchbar({}: Props) {
       setInputValue("");
     }
   };
+
   return (
     <>
       <div className="flex flex-col overflow-hidden justify-center items-center m-auto ">

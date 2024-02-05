@@ -6,7 +6,7 @@ import Navbar from "@/components/navbar";
 import Description from "./instagram/description";
 import Hero from "@/components/hero";
 import Searchbar from "./instagram/video/page";
-import { Toaster } from "sonner";
+import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
   title:
