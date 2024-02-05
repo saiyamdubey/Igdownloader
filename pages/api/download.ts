@@ -7,10 +7,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // Remove ?utm_source=ig_web_copy_link from the URL if it exists
   if (typeof url === 'string') {
     url = url.replace(/\?utm_source=ig_web_copy_link$/, '');
+    url = url.replace(/\/[^/]*$/, '');
   }
 
   try {
-    const response = await fetch(url as string);
+    const response = await fetch(url+"?__a&__d=dis" as string);
     const data = await response.json();
     res.status(200).json(data);
   } catch (error) {
