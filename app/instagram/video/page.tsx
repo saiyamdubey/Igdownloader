@@ -1,16 +1,37 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
-import Link from "next/link";
 import { toast } from "sonner";
-import Image from "next/image";
 
 type Props = {};
 
 function Searchbar({}: Props) {
   const [inputValue, setInputValue] = useState("");
-  const [videodata, setvideodata] = useState<any>({});
+  const [videodata, setVideodata] = useState<any>({});
+  const [proxyImageUrl, setProxyImageUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (videodata.data?.graphql?.shortcode_media?.display_resources?.[0]?.src) {
+      handleFetchProxyImage(
+        videodata.data.graphql.shortcode_media.display_resources[0].src
+      );
+    }
+  }, [videodata]);
+
+  const handleFetchProxyImage = async (imageUrl: string) => {
+    try {
+      const response = await fetch(
+        `/api/imagedown?imageUrl=${encodeURIComponent(imageUrl)}`
+      );
+      const data = await response.json();
+      if (data.imageUrlBase64) {
+        setProxyImageUrl(data.imageUrlBase64);
+      }
+    } catch (error) {
+      console.error("Error fetching proxy image:", error);
+    }
+  };
 
   async function downloadReel(url: string) {
     try {
@@ -21,13 +42,11 @@ function Searchbar({}: Props) {
       if (data.error) {
         toast("Check the Provided Link");
       }
-      setvideodata(data);
-      console.log(
-        "data > graphql > shortcode_media > display_resources : ",
-        data.graphql.shortcode_media.display_resources[0].src
-      );
+      console.log("saitdndg");
+      console.log(data);
+      await setVideodata(data);
     } catch (error) {
-      console.error(error);
+      console.error("Error downloading reel:", error);
     }
   }
 
@@ -44,48 +63,55 @@ function Searchbar({}: Props) {
   };
 
   return (
-    <>
-      <div className="flex flex-col overflow-hidden justify-center items-center m-auto">
-        <div className="mt-10  input-group flex items-center">
-          <button
-            className="absolute sm:mb-[70px] ml-1 flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-500 text-white text-base  cursor-pointer transition-colors duration-500  border-black ease-in-out  focus:border-gray-700 "
-            onClick={pasteOrClear}
-          >
-            <GoPaste className="mt-1 mr-3 sm:mr-0" />
-            <h1 className="sm:hidden">
-              {inputValue === "" ? " Paste" : "Clear"}
-            </h1>
-          </button>
-          <div className="flex sm:flex-col sm:justify-center sm:items-center">
-            <input
-              className="input 2xl:pl-32 sm:pl-20 min-h-10 w-[48rem] sm:w-[24rem] py-3 placeholder:text-base sm:placeholder:text-sm placeholder:font-mono border-2 border-black"
-              id="text"
-              name="text"
-              type="text"
-              value={inputValue}
-              placeholder="instagram.com/p/Cx8FpSlyXAC/"
-              onChange={(e) => setInputValue(e.target.value)}
-            />
-            <input
-              onClick={handleDownload}
-              className="button--submit border-2 sm:mt-5 sm:w-[10rem] min-h-10 rounded-r-[3px] sm:rounded-[18px] px-4 py-3 bg-black text-white text-base cursor-pointer    border-black ease-in-out   bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
-              value="Download"
-              type="submit"
-            />
-          </div>
+    <div className="flex flex-col overflow-hidden justify-center items-center m-auto">
+      <div className="mt-10 input-group flex items-center">
+        <button
+          className="absolute sm:mb-[70px] ml-1 flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-500 text-white text-base cursor-pointer transition-colors duration-500 border-black ease-in-out focus:border-gray-700"
+          onClick={pasteOrClear}
+        >
+          <GoPaste className="mt-1 mr-3 sm:mr-0" />
+          <h1 className="sm:hidden">
+            {inputValue === "" ? " Paste" : "Clear"}
+          </h1>
+        </button>
+        <div className="flex sm:flex-col sm:justify-center sm:items-center">
+          <input
+            className="input 2xl:pl-32 sm:pl-20 min-h-10 w-[48rem] sm:w-[24rem] py-3 placeholder:text-base sm:placeholder:text-sm placeholder:font-mono border-2 border-black"
+            id="text"
+            name="text"
+            type="text"
+            value={inputValue}
+            placeholder="instagram.com/p/Cx8FpSlyXAC/"
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <input
+            onClick={handleDownload}
+            className="button--submit border-2 sm:mt-5 sm:w-[10rem] min-h-10 rounded-r-[3px] sm:rounded-[18px] px-4 py-3 bg-black text-white text-base cursor-pointer border-black ease-in-out bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
+            value="Download"
+            type="submit"
+          />
         </div>
-        <div className="downloadmediadata">
-          {videodata.graphql && (
-            <a 
-            
-              href={videodata.graphql.shortcode_media.display_resources[0].src}
+      </div>
+      <div className="downloadmediadata">
+        {videodata.data && (
+          <button>
+            <a
+              href={
+                videodata.data.graphql.shortcode_media.display_resources[2].src
+              }
+              download
             >
               Download
             </a>
-          )}
-        </div>
+          </button>
+        )}
+        {proxyImageUrl === "" ? (
+          <img width={300} src={proxyImageUrl} alt="Image" />
+        ) : (
+          <h1>loading</h1>
+        )}
       </div>
-    </>
+    </div>
   );
 }
 
