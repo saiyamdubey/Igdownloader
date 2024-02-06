@@ -44,10 +44,11 @@ function Searchbar({}: Props) {
 
   const downloadOnClick = () => {
     if (videodata.graphql) {
+      alert("dffghfj");
       const downloadLink = document.createElement("a");
       downloadLink.href =
         videodata.graphql.shortcode_media.display_resources[0].src;
-      downloadLink.setAttribute("download", "image.jpg"); // Set the filename for the download
+      downloadLink.setAttribute("download", "image.jpg");
       document.body.appendChild(downloadLink);
       downloadLink.click();
       document.body.removeChild(downloadLink);
