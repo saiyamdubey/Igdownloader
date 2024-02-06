@@ -1,21 +1,34 @@
 // pages/api/download.ts
 import { NextApiRequest, NextApiResponse } from 'next';
+import { fetchImage } from './imagedown'; // Import the fetchImage function from imagedown.ts
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   let { url } = req.query;
 
   if (typeof url === 'string') {
-    url = url.replace(/\?utm_source=ig_web_copy_link$/, '');
-    url = url.replace(/\/[^/]*$/, '');
-    url = url + process.env.SECRET_KEY;
-    // alert(url)  // serverhai bhai ye te nahi chale ga yaha par chutiye 
-    // console.log(url)
+    // Check if the URL is from Instagram and remove query parameters
+    if (url.includes('instagram.com')) {
+      url = url.split('?')[0];
+    }
+
+    // Add any additional processing logic here if needed
+    // url = modifyUrl(url);
   }
 
   try {
-    const response = await fetch(url as string);
-    const data = await response.json();
-    res.status(200).json(data);
+    // Use the fetchImage function to fetch the image data
+    const fileData = await fetchImage(url as string);
+
+    // Set the response headers
+    const fileName = 'downloaded_image.jpg';
+    res.setHeader('Content-Disposition', `attachment; filename="${fileName}"`);
+    res.setHeader('Content-Type', 'image/jpeg'); 
+
+    // Convert the Blob data to Buffer and send it in the response
+    const buffer = await fileData.arrayBuffer();
+    const data = Buffer.from(buffer);
+    
+    res.status(200).send(data);
   } catch (error) {
     console.error('Error fetching data:', error);
     res.status(500).json({ error: 'Internal server error' });

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
+import { saveAs } from "file-saver";
 import { GoPaste } from "react-icons/go";
-import Link from "next/link";
 import { toast } from "sonner";
 
 type Props = {};
@@ -20,7 +20,9 @@ function Searchbar({}: Props) {
       if (data.error) {
         toast("Check the Provided Link");
       }
+
       setvideodata(data);
+
       console.log(
         "data > graphql > shortcode_media > display_resources : ",
         data.graphql.shortcode_media.display_resources[0].src
@@ -42,16 +44,37 @@ function Searchbar({}: Props) {
     }
   };
 
-  const downloadOnClick = () => {
+  const downloadOnClick = async () => {
     if (videodata.graphql) {
-      alert("dffghfj");
-      const downloadLink = document.createElement("a");
-      downloadLink.href =
-        videodata.graphql.shortcode_media.display_resources[0].src;
-      downloadLink.setAttribute("download", "image.jpg");
-      document.body.appendChild(downloadLink);
-      downloadLink.click();
-      document.body.removeChild(downloadLink);
+      let imageUrl = videodata.graphql.shortcode_media.display_resources[0].src;
+      console.log(imageUrl);
+      await fetch(`/api/imagedown?url=${encodeURIComponent(imageUrl)}`)
+        .then((response) => {
+          // Check if response is ok
+          if (response.ok) {
+            // Create a Blob from the fetched data
+            return response.blob();
+          } else {
+            throw new Error("Failed to fetch image");
+          }
+        })
+        .then((blob) => {
+          console.log("blob :", blob);
+          // Create a Blob URL
+          const blobUrl = URL.createObjectURL(blob);
+
+          // Create an anchor element
+          const anchor = document.createElement("a");
+          anchor.href = blobUrl;
+          anchor.download = "downloaded_image.jpg";
+
+          // Trigger a click event on the anchor element
+          anchor.click();
+
+          // Revoke the Blob URL to free up resources
+          URL.revokeObjectURL(blobUrl);
+        })
+        .catch((error) => console.error("Error fetching image:", error));
     }
   };
 
@@ -59,6 +82,7 @@ function Searchbar({}: Props) {
     <>
       <div className="flex flex-col overflow-hidden justify-center items-center m-auto">
         <div className="mt-10  input-group flex items-center">
+          {/* Your input and button elements */}
           <button
             className="absolute sm:mb-[70px] ml-1 flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-500 text-white text-base  cursor-pointer transition-colors duration-500  border-black ease-in-out  focus:border-gray-700 "
             onClick={pasteOrClear}
@@ -90,7 +114,12 @@ function Searchbar({}: Props) {
           <h1>Here is the Fucking links to download</h1>
           {videodata.graphql && (
             // Use a button instead of Link to trigger download
-            <button onClick={downloadOnClick}>Preview Download</button>
+            <button
+              className="px-8 py-4 bg-orange-500"
+              onClick={downloadOnClick}
+            >
+              Preview Download
+            </button>
           )}
         </div>
       </div>
@@ -99,3 +128,16 @@ function Searchbar({}: Props) {
 }
 
 export default Searchbar;
+
+// const blobUrl = URL.createObjectURL(blob);
+
+// // Create an anchor element
+// const anchor = document.createElement("a");
+// anchor.href = blobUrl;
+// anchor.download = "downloaded_image.jpg";
+
+// // Trigger a click event on the anchor element
+// anchor.click();
+
+// // Revoke the Blob URL to free up resources
+// URL.revokeObjectURL(blobUrl);
