@@ -1,6 +1,6 @@
 // pages/api/download.ts
 import { NextApiRequest, NextApiResponse } from 'next';
-import { fetchImage } from './imagedown'; // Import the fetchImage function from imagedown.ts
+import { fetchImage } from './imagedown';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   let { url } = req.query;
@@ -10,9 +10,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     if (url.includes('instagram.com')) {
       url = url.split('?')[0];
     }
-
-    // Add any additional processing logic here if needed
-    // url = modifyUrl(url);
   }
 
   try {

@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { saveAs } from "file-saver";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
 
