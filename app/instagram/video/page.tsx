@@ -33,26 +33,30 @@ function Searchbar({}: Props) {
     }
   };
 
+  const handleDownload = () => {
+    downloadReel(inputValue);
+  };
+
   async function downloadReel(url: string) {
     try {
       const response = await fetch(
         `/api/download?url=${encodeURIComponent(url)}`
       );
+
       const data = await response.json();
+      console.log(data);
+      await setVideodata(data);
+      console.log("saitdndg");
+      console.log(data.graphql.shortcode_media.display_resources[0].src);
+      setProxyImageUrl(data.graphql.shortcode_media.display_resources[0].src);
       if (data.error) {
         toast("Check the Provided Link");
       }
-      console.log("saitdndg");
-      console.log(data);
       await setVideodata(data);
     } catch (error) {
       console.error("Error downloading reel:", error);
     }
   }
-
-  const handleDownload = () => {
-    downloadReel(inputValue);
-  };
 
   const pasteOrClear = () => {
     if (inputValue === "") {
@@ -61,6 +65,25 @@ function Searchbar({}: Props) {
       setInputValue("");
     }
   };
+
+  async function downloadImage(url1: string) {
+    try {
+      const response = await fetch(
+        `/api/image?url=${encodeURIComponent(url1)}`
+      );
+      const data = await response.blob();
+      const url = URL.createObjectURL(data);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "image.png";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Error downloading reel:", error);
+    }
+  }
 
   return (
     <div className="flex flex-col overflow-hidden justify-center items-center m-auto">
@@ -93,22 +116,11 @@ function Searchbar({}: Props) {
         </div>
       </div>
       <div className="downloadmediadata">
-        {videodata.data && (
-          <button>
-            <a
-              href={
-                videodata.data.graphql.shortcode_media.display_resources[2].src
-              }
-              download
-            >
-              Download
-            </a>
+        <h1>saiam dubey</h1>
+        {proxyImageUrl && (
+          <button onClick={() => downloadImage(proxyImageUrl)}>
+            Download image1
           </button>
-        )}
-        {proxyImageUrl === "" ? (
-          <img width={300} src={proxyImageUrl} alt="Image" />
-        ) : (
-          <h1>loading</h1>
         )}
       </div>
     </div>
