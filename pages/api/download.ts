@@ -11,6 +11,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
+    console.log("fjbnokoijkn")
     const response = await fetch(url as string);
     const data = await response.json();
     res.status(200).send(data);

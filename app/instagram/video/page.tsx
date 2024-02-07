@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
+import { downloadImage } from "@/app/instagram/video/image";
 
 type Props = {};
 
@@ -75,13 +76,22 @@ function Searchbar({}: Props) {
       const url = URL.createObjectURL(data);
       const link = document.createElement("a");
       link.href = url;
-      link.download = "image.png";
+      link.download = "image.jpeg";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
       URL.revokeObjectURL(url);
     } catch (error) {
       console.error("Error downloading reel:", error);
+    }
+  }
+
+  async function handleDownloadImage(url: string) {
+    
+    try {
+      await downloadImage(url);
+    } catch (error) {
+      console.error("Error downloading image:", error);
     }
   }
 
@@ -116,9 +126,10 @@ function Searchbar({}: Props) {
         </div>
       </div>
       <div className="downloadmediadata">
-        <h1>saiam dubey</h1>
+        <h1>Saiyam Dubey</h1>
+
         {proxyImageUrl && (
-          <button onClick={() => downloadImage(proxyImageUrl)}>
+          <button onClick={() => handleDownloadImage(proxyImageUrl)}>
             Download image1
           </button>
         )}
