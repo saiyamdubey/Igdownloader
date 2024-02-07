@@ -10,8 +10,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     url = url + "/?__a=1&__d=dis";
   }
 
-  
-
   try {
     const response = await fetch(url as string);
     const data = await response.json();
