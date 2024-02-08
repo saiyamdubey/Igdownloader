@@ -91,37 +91,136 @@
 
 // "use client"
 
+// import fs from 'fs';
+// import https from "https";
+// import fetch from 'node-fetch';
+// import { NextApiRequest, NextApiResponse } from 'next';
+
+// export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+//   let { url } = req.query;
+//   console.log("url ::", url);
+  
+//   try {
+//     const response = await fetch(url as string);
+//     console.log("Response of the image fetch ::", response);
+  
+//     https
+//     .get(url as string, (resonse) => {
+//       const fileStream = fs.createWriteStream("down.jpeg");
+      
+//       resonse.pipe(fileStream);
+//       fileStream.on("finish", () => {
+//         fileStream.close();
+//         console.log(`Downloaded down.jpeg`);
+//       });
+//     })
+//     .on("error", (error) => {
+//       console.error(`Error downloading image from ${url}: ${error}`);
+//     });
+
+//   } catch (error) {
+//     console.error('Error fetching from image.ts data:', error);
+//     res.status(500).json({ error: 'Internal from the image.ts server error' });
+//   }
+// }
+
+// thhik hai ye bhi
+
+// import fs from 'fs';
+// import https from "https";
+// import fetch from 'node-fetch';
+// import { NextApiRequest, NextApiResponse } from 'next';
+
+// export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+//   let { url } = req.query;
+//   console.log("url ::", url);
+  
+//   try {
+//     const response = await fetch(url as string);
+//     console.log("Response of the image fetch ::", response);
+  
+//     // https
+//     // .get(url as string, (resonse) => {
+//     //   const fileStream = fs.createWriteStream("down.jpeg");
+      
+//     //   resonse.pipe(fileStream);
+//     //   fileStream.on("finish", () => {
+//     //     fileStream.close();
+//     //     console.log(`Downloaded down.jpeg`);
+//     //   });
+//     // })
+//     // .on("error", (error) => {
+//     //   console.error(`Error downloading image from ${url}: ${error}`);
+//     // });
+//     res.send(response.url)
+
+//   } catch (error) {
+//     console.error('Error fetching from image.ts data:', error);
+//     res.status(500).json({ error: 'Internal from the image.ts server error' });
+//   }
+// }
+
 import fs from 'fs';
-import https from "https";
+import http from 'http';
 import fetch from 'node-fetch';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+const maxLength = 10; // 10mb
+
+const download = function(uri, callback) {
+  http.request(uri)
+    .on('response', function(res) {
+      if (res.headers['content-length'] > maxLength * 1024 * 1024) {
+        callback(new Error('Image too large.'));
+      } else if (![200, 304].includes(res.statusCode)) {
+        callback(new Error('Received an invalid status code.'));
+      } else if (!res.headers['content-type'].includes('image')) {
+        callback(new Error('Not an image.'));
+      } else {
+        let body = '';
+        res.setEncoding('binary');
+        res
+          .on('error', function(err) {
+            callback(err);
+          })
+          .on('data', function(chunk) {
+            body += chunk;
+          })
+          .on('end', function() {
+            const path = '/tmp/' + Math.random().toString().split('.').pop();
+            fs.writeFile(path, body, 'binary', function(err) {
+              callback(err, path);
+            });
+          });
+      }
+    })
+    .on('error', function(err) {
+      callback(err);
+    })
+    .end();
+};
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  let { url } = req.query;
+  const { url } = req.query;
   console.log("url ::", url);
-  
+
   try {
     const response = await fetch(url as string);
     console.log("Response of the image fetch ::", response);
-  
-    https
-    .get(url as string, (resonse) => {
-      const fileStream = fs.createWriteStream("down.jpeg");
-      
-      resonse.pipe(fileStream);
-      fileStream.on("finish", () => {
-        fileStream.close();
-        console.log(`Downloaded down.jpeg`);
-      });
-    })
-    .on("error", (error) => {
-      console.error(`Error downloading image from ${url}: ${error}`);
+
+    download(url, (err, path) => {
+      if (err) {
+        console.error('Error downloading image:', err);
+        res.status(500).json({ error: 'Error downloading image' });
+      } else {
+        console.log('Image downloaded successfully:', path);
+        res.status(200).send("Download completed");
+      }
     });
 
   } catch (error) {
     console.error('Error fetching from image.ts data:', error);
-    res.status(500).json({ error: 'Internal from the image.ts server error' });
+    res.status(500).json({ error: 'Internal server error' });
   }
 }
-
 
