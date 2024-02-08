@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
-import { downloadImage } from "@/app/instagram/video/image";
 
 type Props = {};
 
@@ -68,14 +67,19 @@ function Searchbar({}: Props) {
   };
 
   async function downloadImage(url1: string) {
+    console.log("this fun");
     try {
       const response = await fetch(
         `/api/image?url=${encodeURIComponent(url1)}`
       );
+
+      console.log("response from after the image.ts api", response);
       const data = await response.blob();
       const url = URL.createObjectURL(data);
       const link = document.createElement("a");
+      console.log(url);
       link.href = url;
+
       link.download = "image.jpeg";
       document.body.appendChild(link);
       link.click();
@@ -83,15 +87,6 @@ function Searchbar({}: Props) {
       URL.revokeObjectURL(url);
     } catch (error) {
       console.error("Error downloading reel:", error);
-    }
-  }
-
-  async function handleDownloadImage(url: string) {
-    
-    try {
-      await downloadImage(url);
-    } catch (error) {
-      console.error("Error downloading image:", error);
     }
   }
 
@@ -126,11 +121,11 @@ function Searchbar({}: Props) {
         </div>
       </div>
       <div className="downloadmediadata">
-        <h1>Saiyam Dubey</h1>
-
+        <h1>Ram Ram </h1>
+        <h1>Saksham Dubey</h1>
         {proxyImageUrl && (
-          <button onClick={() => handleDownloadImage(proxyImageUrl)}>
-            Download image1
+          <button onClick={() => downloadImage(proxyImageUrl)}>
+            Download image
           </button>
         )}
       </div>
