@@ -160,67 +160,49 @@
 //   }
 // }
 
-import fs from 'fs';
-import http from 'http';
-import fetch from 'node-fetch';
+
+
+import request from "request"; 
 import { NextApiRequest, NextApiResponse } from 'next';
 
-const maxLength = 10; // 10mb
 
-const download = function(uri, callback) {
-  http.request(uri)
-    .on('response', function(res) {
-      if (res.headers['content-length'] > maxLength * 1024 * 1024) {
-        callback(new Error('Image too large.'));
-      } else if (![200, 304].includes(res.statusCode)) {
-        callback(new Error('Received an invalid status code.'));
-      } else if (!res.headers['content-type'].includes('image')) {
-        callback(new Error('Not an image.'));
-      } else {
-        let body = '';
-        res.setEncoding('binary');
-        res
-          .on('error', function(err) {
-            callback(err);
-          })
-          .on('data', function(chunk) {
-            body += chunk;
-          })
-          .on('end', function() {
-            const path = '/tmp/' + Math.random().toString().split('.').pop();
-            fs.writeFile(path, body, 'binary', function(err) {
-              callback(err, path);
-            });
-          });
-      }
-    })
-    .on('error', function(err) {
-      callback(err);
-    })
-    .end();
+function download(res: NextApiResponse, url: string,extension : string) {
+  request(url,{encoding:null},(error,response,body)=>{
+    if(error){
+      res.status(404).send("saiyam dubey")
+      return ;
+    }
+    const filename = Date.now() + "." + extension;
+    res.setHeader('Content-Type', 'octet-stream');
+    res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
+    res.send(body);
+  })
+  
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { url } = req.query;
+  const { url } = req.query as { url: string };
   console.log("url ::", url);
 
-  try {
-    const response = await fetch(url as string);
-    console.log("Response of the image fetch ::", response);
 
-    download(url, (err, path) => {
-      if (err) {
-        console.error('Error downloading image:', err);
-        res.status(500).json({ error: 'Error downloading image' });
-      } else {
-        console.log('Image downloaded successfully:', path);
-        res.status(200).send("Download completed");
-      }
-    });
+  download(res, url,"jpeg");
+    
 
-  } catch (error) {
-    console.error('Error fetching from image.ts data:', error);
-    res.status(500).json({ error: 'Internal server error' });
-  }
+  // try {
+  //   const response = await fetch(url);
+  //   console.log("Response of the image fetch ::", response);
+
+  //   download(url, (err) => {
+  //     if (err) {
+  //       console.error('Error downloading image:', err);
+  //       res.status(500).json({ error: 'Error downloading image' });
+  //     } else {
+        
+  //       res.setHeader('Content-Type', 'image/jpeg');
+  //       res.setHeader('Content-Disposition', 'attachment; filename="downloadedImage.jpeg"');
+  //       res.status(200).end();
+  //     }
+  //   });
+
+  
 }
-
