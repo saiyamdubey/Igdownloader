@@ -18,6 +18,7 @@ function Hero({}: Props) {
           <h1 className="text-center text-5xl mt-12 relative mb-4 sm:text-3xl">
             Instagram{"  "}
             <span className="relative ml-2">
+              <span className="sm:hidden">{/* <Typing /> */}</span>
               Downloader
               <span className="absolute bottom-0 left-0 w-full h-[3px] mt-[5px] bg-gradient-to-r from-blue-500 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500"></span>
             </span>

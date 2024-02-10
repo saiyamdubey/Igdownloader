@@ -3,35 +3,37 @@
 import React, { useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
+import Loader from "@/components/loader"
 
 type Props = {};
 
 function Searchbar({}: Props) {
   const [inputValue, setInputValue] = useState("");
-  const [videodata, setVideodata] = useState<any>({});
-  const [proxyImageUrl, setProxyImageUrl] = useState<string | null>(null);
+  const [videodata, setVideodata] = useState<any>("");
+  const [imagedata, setimagedata] = useState<any>("");
+  // const [proxyImageUrl, setProxyImageUrl] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (videodata.data?.graphql?.shortcode_media?.display_resources?.[0]?.src) {
-      handleFetchProxyImage(
-        videodata.data.graphql.shortcode_media.display_resources[0].src
-      );
-    }
-  }, [videodata]);
+  // useEffect(() => {
+  //   if (videodata.data?.graphql?.shortcode_media?.display_resources?.[0]?.src) {
+  //     // handleFetchProxyImage(
+  //     //   videodata.data.graphql.shortcode_media.display_resources[0].src
+  //     // );
+  //   }
+  // }, [videodata]);
 
-  const handleFetchProxyImage = async (imageUrl: string) => {
-    try {
-      const response = await fetch(
-        `/api/imagedown?imageUrl=${encodeURIComponent(imageUrl)}`
-      );
-      const data = await response.json();
-      if (data.imageUrlBase64) {
-        setProxyImageUrl(data.imageUrlBase64);
-      }
-    } catch (error) {
-      console.error("Error fetching proxy image:", error);
-    }
-  };
+  // const handleFetchProxyImage = async (imageUrl: string) => {
+  //   try {
+  //     const response = await fetch(
+  //       `/api/imagedown?imageUrl=${encodeURIComponent(imageUrl)}`
+  //     );
+  //     const data = await response.json();
+  //     if (data.imageUrlBase64) {
+  //       setProxyImageUrl(data.imageUrlBase64);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error fetching proxy image:", error);
+  //   }
+  // };
 
   const handleDownload = () => {
     downloadReel(inputValue);
@@ -45,16 +47,20 @@ function Searchbar({}: Props) {
 
       const data = await response.json();
       console.log(data);
-      await setVideodata(data);
-      console.log(data.graphql.shortcode_media.display_resources[0].src);
-      setProxyImageUrl(data.graphql.shortcode_media.display_resources[0].src);
-      if (data) {
+      setVideodata(data);
+      if (data.error == "link is wrong") {
+        console.log("hello");
         toast("Check the Provided Link");
       }
-      await setVideodata(data);
+      if (data.graphql.shortcode_media.__typename == "GraphVideo") {
+        setimagedata("");
+        setVideodata(data);
+      } else {
+        setVideodata("");
+        setimagedata(data);
+      }
     } catch (error) {
       toast("Check the Provided Link");
-      console.error("Error downloading reel:", error);
     }
   }
 
@@ -66,29 +72,29 @@ function Searchbar({}: Props) {
     }
   };
 
-  async function downloadImage(url1: string) {
-    console.log("this fun");
-    try {
-      const response = await fetch(
-        `/api/image?url=${encodeURIComponent(url1)}`
-      );
+  // async function downloadImage(url1: string) {
+  //   console.log("this fun");
+  //   try {
+  //     const response = await fetch(
+  //       `/api/image?url=${encodeURIComponent(url1)}`
+  //     );
 
-      console.log("response from after the image.ts api", response);
-      const data = await response.blob();
-      const url = URL.createObjectURL(data);
-      const link = document.createElement("a");
-      console.log(url);
-      link.href = url;
+  //     console.log("response from after the image.ts api", response);
+  //     const data = await response.blob();
+  //     const url = URL.createObjectURL(data);
+  //     const link = document.createElement("a");
+  //     console.log(url);
+  //     link.href = url;
 
-      link.download = "image.jpeg";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url);
-    } catch (error) {
-      console.error("Error downloading reel:", error);
-    }
-  }
+  //     link.download = "image.jpeg";
+  //     document.body.appendChild(link);
+  //     link.click();
+  //     document.body.removeChild(link);
+  //     URL.revokeObjectURL(url);
+  //   } catch (error) {
+  //     console.error("Error downloading reel:", error);
+  //   }
+  // }
 
   return (
     <div className="flex flex-col overflow-hidden justify-center items-center m-auto">
@@ -98,7 +104,7 @@ function Searchbar({}: Props) {
           onClick={pasteOrClear}
         >
           <GoPaste className="mt-1 mr-3 sm:mr-0" />
-          
+
           <h1 className="sm:hidden">
             {inputValue === "" ? " Paste" : "Clear"}
           </h1>
@@ -113,6 +119,7 @@ function Searchbar({}: Props) {
             placeholder="instagram.com/p/Cx8FpSlyXAC/"
             onChange={(e) => setInputValue(e.target.value)}
           />
+          <Loader/>
           <input
             onClick={handleDownload}
             className="button--submit border-2 sm:mt-5 sm:w-[10rem] min-h-10 rounded-r-[3px] sm:rounded-[18px] px-4 py-3 bg-black text-white text-base cursor-pointer border-black ease-in-out bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
@@ -122,22 +129,26 @@ function Searchbar({}: Props) {
         </div>
       </div>
       <div className="downloadmediadata">
-        <img
-          src="https://instagram.fsaw2-3.fna.fbcdn.net/v/t51.2885-15/340158789_796485374701141_7210628110786712112_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fsaw2-3.fna.fbcdn.net&_nc_cat=101&_nc_ohc=POt3chWJr0UAX-Ru3Ro&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfDjOQE3Kns6oYyKLdTIG05RtZ2KkhLffOCWsO2mPUrXeQ&oe=65CC8516&_nc_sid=2999b8"
-          alt="image"
-          srcset=""
-        />
-        {proxyImageUrl && (
-          <button onClick={() => downloadImage(proxyImageUrl)}>
-            Download image
-          </button>
+        {videodata === "" ? (
+          
+          <h1>no video</h1>
+        ) : (
+          <a href={videodata.graphql.shortcode_media.video_url + "&dl=1"}>
+            Download Video
+          </a>
         )}
-        {/* <a
-          rel="noopener noreferrer"
-          href="https://scontent.cdninstagram.com/v/t51.2885-15/425623552_740785771359459_1217149146754925363_n.jpg?stp=dst-jpg_e35_p1080x1080&efg=eyJ2ZW5jb2Rl3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyIn0&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=1&_nc_ohc=EDuMzfcMRfwAX9IYm4-&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfCjbb7447HaSoDdS8wskttbsVq2CNGvZaXTtQKs_YmuGw&oe=65C9A193&_nc_sid=2999b8&dl=1"
-        >
-          BB ki vines Image Download
-        </a> */}
+        {imagedata === "" ? (
+          <h1>no image</h1>
+        ) : (
+          <a
+            href={
+              imagedata.graphql.shortcode_media.display_resources[0].src +
+              "&dl=1"
+            }
+          >
+            Download Image
+          </a>
+        )}
       </div>
     </div>
   );
