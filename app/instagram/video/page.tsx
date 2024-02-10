@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
 
-
 type Props = {};
 
 function Searchbar({}: Props) {
@@ -47,14 +46,14 @@ function Searchbar({}: Props) {
       const data = await response.json();
       console.log(data);
       await setVideodata(data);
-      console.log("saitdndg");
       console.log(data.graphql.shortcode_media.display_resources[0].src);
       setProxyImageUrl(data.graphql.shortcode_media.display_resources[0].src);
-      if (data.error) {
+      if (data) {
         toast("Check the Provided Link");
       }
       await setVideodata(data);
     } catch (error) {
+      toast("Check the Provided Link");
       console.error("Error downloading reel:", error);
     }
   }
@@ -122,13 +121,17 @@ function Searchbar({}: Props) {
         </div>
       </div>
       <div className="downloadmediadata">
-        <h1>Ram Ram </h1>
-        <h1>Saksham Dubey</h1>
         {proxyImageUrl && (
           <button onClick={() => downloadImage(proxyImageUrl)}>
             Download image
           </button>
         )}
+        {/* <a
+          rel="noopener noreferrer"
+          href="https://scontent.cdninstagram.com/v/t51.2885-15/425623552_740785771359459_1217149146754925363_n.jpg?stp=dst-jpg_e35_p1080x1080&efg=eyJ2ZW5jb2Rl3RhZyI6ImltYWdlX3VybGdlbi4xNDQweDE4MDAuc2RyIn0&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=1&_nc_ohc=EDuMzfcMRfwAX9IYm4-&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfCjbb7447HaSoDdS8wskttbsVq2CNGvZaXTtQKs_YmuGw&oe=65C9A193&_nc_sid=2999b8&dl=1"
+        >
+          BB ki vines Image Download
+        </a> */}
       </div>
     </div>
   );

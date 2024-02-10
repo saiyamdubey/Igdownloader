@@ -134,7 +134,7 @@
 // export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 //   let { url } = req.query;
 //   console.log("url ::", url);
-  
+
 //   try {
 //     const response = await fetch(url as string);
 //     console.log("Response of the image fetch ::", response);
@@ -165,13 +165,13 @@
 import request from "request"; 
 import { NextApiRequest, NextApiResponse } from 'next';
 
-
 function download(res: NextApiResponse, url: string,extension : string) {
   request(url,{encoding:null},(error,response,body)=>{
     if(error){
       res.status(404).send("saiyam dubey")
       return ;
     }
+
     const filename = Date.now() + "." + extension;
     res.setHeader('Content-Type', 'octet-stream');
     res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
@@ -180,13 +180,9 @@ function download(res: NextApiResponse, url: string,extension : string) {
   
 };
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const { url } = req.query as { url: string };
-  console.log("url ::", url);
-
-
-  download(res, url,"jpeg");
-    
+// export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+//   const { url } = req.query as { url: string };
+//   download(res, url,"jpeg");
 
   // try {
   //   const response = await fetch(url);
@@ -205,4 +201,4 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   //   });
 
   
-}
+// }

@@ -7,11 +7,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (typeof url === 'string') {
     url = url.replace(/\?utm_source=ig_web_copy_link$/, '');
     url = url.replace(/\/[^/]*$/, '');
-    url = url + "/?__a=1&__d=dis";
+    url = url + process.env.SECRET_KEY;
   }
 
   try {
-    console.log("fjbnokoijkn")
+    // console.log(process.env.SECRET_KEY)
     const response = await fetch(url as string);
     const data = await response.json();
     res.status(200).send(data);
