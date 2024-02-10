@@ -98,6 +98,7 @@ function Searchbar({}: Props) {
           onClick={pasteOrClear}
         >
           <GoPaste className="mt-1 mr-3 sm:mr-0" />
+          
           <h1 className="sm:hidden">
             {inputValue === "" ? " Paste" : "Clear"}
           </h1>
@@ -121,6 +122,11 @@ function Searchbar({}: Props) {
         </div>
       </div>
       <div className="downloadmediadata">
+        <img
+          src="https://instagram.fsaw2-3.fna.fbcdn.net/v/t51.2885-15/340158789_796485374701141_7210628110786712112_n.jpg?stp=dst-jpg_e35&_nc_ht=instagram.fsaw2-3.fna.fbcdn.net&_nc_cat=101&_nc_ohc=POt3chWJr0UAX-Ru3Ro&edm=AP_V10EBAAAA&ccb=7-5&oh=00_AfDjOQE3Kns6oYyKLdTIG05RtZ2KkhLffOCWsO2mPUrXeQ&oe=65CC8516&_nc_sid=2999b8"
+          alt="image"
+          srcset=""
+        />
         {proxyImageUrl && (
           <button onClick={() => downloadImage(proxyImageUrl)}>
             Download image
