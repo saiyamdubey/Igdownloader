@@ -30,7 +30,7 @@ function Hero({}: Props) {
             </span>
           </p>
         </div>
-        <div className="linksheader text-white text-[18px] bg-gray-800 2xl:w-[80%] sm:w-[100%] mt-6 [&>a]:px-[35px] sm:[&>a]:px-[15px] [&>a]:py-3 [&>a]:ml-3 sm:[&>a]:ml-0  rounded-xl flex flex-row justify-evenly items-center">
+        <div className="linksheader text-white text-[18px] bg-gray-800 2xl:w-[80%] sm:w-[100%] mt-6 [&>a]:px-[35px] sm:[&>a]:px-[15px] [&>a]:py-3 [&>a]:ml-0 sm:[&>a]:ml-0  rounded-xl flex flex-row justify-evenly items-center">
           <Link
             className="flex flex-row hover:bg-gradient-to-r hover:from-red-300 hover:to-pink-500 rounded-xl"
             href="/instagram/story"

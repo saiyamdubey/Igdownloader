@@ -162,11 +162,11 @@ function Searchbar({}: Props) {
           <>{/* <Loader /> */}</>
         ) : (
           <>
-            <div className="w-[20rem]">
+            <div className="w-[20rem] mt-8">
               <div className="flex relative ">
                 <img
-                  className=" w-[100%] h-[18rem] brightness-110 saturate-100"
-                  src="easyblur.jpg"
+                  className=" w-[100%] h-[18rem] brightness-110 saturate-200"
+                  src="video.png"
                   alt="images"
                 ></img>
                 <a href={videodata.graphql.shortcode_media.video_url + "&dl=1"}>
@@ -189,7 +189,7 @@ function Searchbar({}: Props) {
           <>{/* <Loader /> */}</>
         ) : (
           <>
-            <div className="w-[20rem]">
+            <div className="w-[20rem] mt-8">
               <div className="flex relative ">
                 <img
                   className=" w-[100%] h-[18rem] brightness-110 saturate-100"
