@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
-import Loader from "@/app/instagram/loader"
+import Loader from "@/app/instagram/loader";
 
 type Props = {};
 
@@ -39,16 +39,45 @@ function Searchbar({}: Props) {
     downloadReel(inputValue);
   };
 
+  // async function downloadReel(url: string) {
+  //   try {
+  //     if (url.startsWith("https://instagram.com/")) {
+  //       return toast("Check the Provided Link");
+  //     }
+  //     const response = await fetch(
+  //       `/api/download?url=${encodeURIComponent(url)}`
+  //     );
+
+  //     const data = await response.json();
+  //     console.log(data);
+  //     setVideodata(data);
+  //     if (data.error === "link is wrong") {
+  //       console.log("hello");
+  //       toast("Check the Provided Link");
+  //     } else if (data.graphql.shortcode_media.__typename == "GraphVideo") {
+  //       setimagedata("");
+  //       setVideodata(data);
+  //     } else {
+  //       setVideodata("");
+  //       setimagedata(data);
+  //     }
+  //   } catch (error) {
+  //     toast("Check the Provided Link");
+  //   }
+  // }
   async function downloadReel(url: string) {
     try {
+      if (url.startsWith("https://instagram.com/")) {
+        return toast("Check the Provided Link");
+      }
+
       const response = await fetch(
         `/api/download?url=${encodeURIComponent(url)}`
       );
-
       const data = await response.json();
       console.log(data);
-      setVideodata(data);
-      if (data.error == "link is wrong") {
+
+      if (data === "link is wrong") {
         console.log("hello");
         toast("Check the Provided Link");
       }
@@ -60,7 +89,7 @@ function Searchbar({}: Props) {
         setimagedata(data);
       }
     } catch (error) {
-      toast("Check the Provided Link");
+      toast("Check the Provided Link sir");
     }
   }
 
@@ -98,7 +127,6 @@ function Searchbar({}: Props) {
 
   return (
     <div className="flex flex-col overflow-hidden justify-center items-center m-auto">
-      <Loader/>
       <div className="mt-10 input-group flex items-center">
         <button
           className="absolute sm:mb-[70px] ml-1 flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-500 text-white text-base cursor-pointer transition-colors duration-500 border-black ease-in-out focus:border-gray-700"
@@ -120,35 +148,40 @@ function Searchbar({}: Props) {
             placeholder="instagram.com/p/Cx8FpSlyXAC/"
             onChange={(e) => setInputValue(e.target.value)}
           />
-          
+
           <input
             onClick={handleDownload}
-            className="button--submit border-2 sm:mt-5 sm:w-[10rem] min-h-10 rounded-r-[3px] sm:rounded-[18px] px-4 py-3 bg-black text-white text-base cursor-pointer border-black ease-in-out bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
-            value="Download"
-            type="submit"
+            className="button--submit border-2 sm:mt-5 sm:w-[10rem] min-h-10 rounded-r-[3px] sm:rounded-[18px] px-4 py-3 bg-black text-white text-base cursor-pointer border-black ease-in-out bg-gradient-to-r from-red-700  to-pink-500 hover:from-pink-600 hover:to-red-600"
+            value="Search"
+            type="button"
           />
         </div>
       </div>
-      <div className="downloadmediadata">
+      <div className="downloadmediadata h-fit w-[80%] flex justify-center flex-row items-center bg-gray-700 mt-8">
         {videodata === "" ? (
-          
-          <h1>no video</h1>
+          <>{/* <Loader /> */}</>
         ) : (
           <a href={videodata.graphql.shortcode_media.video_url + "&dl=1"}>
-            Download Video
+            <button>Download Video</button>
           </a>
         )}
         {imagedata === "" ? (
-          <h1>no image</h1>
+          <>{/* <Loader /> */}</>
         ) : (
-          <a
-            href={
-              imagedata.graphql.shortcode_media.display_resources[0].src +
-              "&dl=1"
-            }
-          >
-            Download Image
-          </a>
+          <>
+            <div className="w-[20rem]">
+              <img className=" w-[100%] h-[18rem]" src="easyblur.jpg"></img>
+              <button className="p-3 bg-purple-600">Preview</button>
+              <a
+                href={
+                  imagedata.graphql.shortcode_media.display_resources[0].src +
+                  "&dl=1"
+                }
+              >
+                <button>Download Image</button>
+              </a>
+            </div>
+          </>
         )}
       </div>
     </div>
