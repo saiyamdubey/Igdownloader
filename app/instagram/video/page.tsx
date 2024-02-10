@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
 import Loader from "@/app/instagram/loader";
@@ -157,28 +157,66 @@ function Searchbar({}: Props) {
           />
         </div>
       </div>
-      <div className="downloadmediadata h-fit w-[80%] flex justify-center flex-row items-center bg-gray-700 mt-8">
+      <div className="downloadmediadata  h-fit w-[100%] flex justify-center flex-row items-center bg-gray-900 mt-8">
         {videodata === "" ? (
           <>{/* <Loader /> */}</>
         ) : (
-          <a href={videodata.graphql.shortcode_media.video_url + "&dl=1"}>
-            <button>Download Video</button>
-          </a>
+          <>
+            <div className="w-[20rem]">
+              <div className="flex relative ">
+                <img
+                  className=" w-[100%] h-[18rem] brightness-110 saturate-100"
+                  src="easyblur.jpg"
+                  alt="images"
+                ></img>
+                <a href={videodata.graphql.shortcode_media.video_url + "&dl=1"}>
+                  <button className="p-3 absolute top-[40%] left-[37%] bg-green-600">
+                    Preview
+                  </button>
+                </a>
+              </div>
+
+              <a href={videodata.graphql.shortcode_media.video_url + "&dl=1"}>
+                <button className="p-5  mt-3 ml-[5rem] bg-purple-600">
+                  Download Video
+                </button>
+              </a>
+            </div>
+          </>
         )}
+
         {imagedata === "" ? (
           <>{/* <Loader /> */}</>
         ) : (
           <>
             <div className="w-[20rem]">
-              <img className=" w-[100%] h-[18rem]" src="easyblur.jpg"></img>
-              <button className="p-3 bg-purple-600">Preview</button>
+              <div className="flex relative ">
+                <img
+                  className=" w-[100%] h-[18rem] brightness-110 saturate-100"
+                  src="easyblur.jpg"
+                  alt="images"
+                ></img>
+                <a
+                  href={
+                    imagedata.graphql.shortcode_media.display_resources[0].src +
+                    "&dl=1"
+                  }
+                >
+                  <button className="p-3 absolute top-[40%] left-[37%] bg-green-600">
+                    Preview
+                  </button>
+                </a>
+              </div>
+
               <a
                 href={
                   imagedata.graphql.shortcode_media.display_resources[0].src +
                   "&dl=1"
                 }
               >
-                <button>Download Image</button>
+                <button className="p-5  mt-3 ml-[5rem] bg-purple-600">
+                  Download Image
+                </button>
               </a>
             </div>
           </>
