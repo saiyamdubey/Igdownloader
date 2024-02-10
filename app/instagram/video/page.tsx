@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
-import Loader from "@/components/loader"
+import Loader from "@/app/instagram/loader"
 
 type Props = {};
 
@@ -98,6 +98,7 @@ function Searchbar({}: Props) {
 
   return (
     <div className="flex flex-col overflow-hidden justify-center items-center m-auto">
+      <Loader/>
       <div className="mt-10 input-group flex items-center">
         <button
           className="absolute sm:mb-[70px] ml-1 flex button--submit border-2 min-h-10 mr-2 rounded-r-[3px] px-4 py-2 bg-gray-500 text-white text-base cursor-pointer transition-colors duration-500 border-black ease-in-out focus:border-gray-700"
@@ -119,7 +120,7 @@ function Searchbar({}: Props) {
             placeholder="instagram.com/p/Cx8FpSlyXAC/"
             onChange={(e) => setInputValue(e.target.value)}
           />
-          <Loader/>
+          
           <input
             onClick={handleDownload}
             className="button--submit border-2 sm:mt-5 sm:w-[10rem] min-h-10 rounded-r-[3px] sm:rounded-[18px] px-4 py-3 bg-black text-white text-base cursor-pointer border-black ease-in-out bg-gradient-to-r from-blue-700 via-purple-500 via-pink-500 to-red-500 hover:from-yellow-600 hover:via-yellow-500 hover:to-green-600"
