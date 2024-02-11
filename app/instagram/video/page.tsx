@@ -11,6 +11,7 @@ function Searchbar({}: Props) {
   const [inputValue, setInputValue] = useState("");
   const [videodata, setVideodata] = useState<any>("");
   const [imagedata, setimagedata] = useState<any>("");
+  const [courosaldata, setcourosaldata] = useState<any>("");
   // const [proxyImageUrl, setProxyImageUrl] = useState<string | null>(null);
 
   // useEffect(() => {
@@ -87,6 +88,7 @@ function Searchbar({}: Props) {
       } else if (data.graphql.shortcode_media.__typename == "GraphSidecar") {
         setVideodata("");
         setimagedata("");
+        setcourosaldata(data.graphql.shortcode_media.edge_sidecar_to_children.edges);
       }
     } catch (error) {
       toast("Check the Provided Link sir");
@@ -184,6 +186,92 @@ function Searchbar({}: Props) {
             </div>
           </>
         )}
+
+        {imagedata === "" ? (
+          <>{/* <Loader /> */}</>
+        ) : (
+          <>
+            <div className="w-[20rem] mt-8">
+              <div className="flex relative ">
+                <img
+                  className=" w-[100%] h-[18rem] brightness-110 saturate-100 blur-lg"
+                  src="easyblur.jpg"
+                  alt="images"
+                ></img>
+                <a
+                  href={
+                    imagedata.graphql.shortcode_media.display_resources[0].src +
+                    "&dl=1"
+                  }
+                >
+                  <button className="p-3 absolute top-[40%] left-[37%] bg-green-600">
+                    Preview
+                  </button>
+                </a>
+              </div>
+
+              <a
+                href={
+                  imagedata.graphql.shortcode_media.display_resources[0].src +
+                  "&dl=1"
+                }
+              >
+                <button className="p-5  mt-3 ml-[5rem] bg-purple-600">
+                  Download Image
+                </button>
+              </a>
+            </div>
+          </>
+        )}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {/* courosal constrution */}
+
+
+
+
+
+
+
+
+
+
+
+
 
         {imagedata === "" ? (
           <>{/* <Loader /> */}</>
