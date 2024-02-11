@@ -82,16 +82,20 @@ function Searchbar({}: Props) {
         console.log("hello");
         toast("Check the Provided Link");
       }
-      if (data.graphql.shortcode_media.__typename == "GraphVideo") {
+      if (data.graphql.shortcode_media.__typename === "GraphVideo") {
         setimagedata("");
         setVideodata(data);
-      } else if (data.graphql.shortcode_media.__typename == "GraphSidecar") {
+      } else if (data.graphql.shortcode_media.__typename === "GraphImage") {
+        setVideodata("");
+        setimagedata(data);
+        setcourosaldata("");
+      } else if (data.graphql.shortcode_media.__typename === "GraphSidecar") {
         setVideodata("");
         setimagedata("");
-        setcourosaldata(data.graphql.shortcode_media.edge_sidecar_to_children.edges);
+        setcourosaldata(data);
       }
     } catch (error) {
-      toast("Check the Provided Link sir");
+      toast("Check the Provided Link 👀");
     }
   }
 
@@ -102,30 +106,6 @@ function Searchbar({}: Props) {
       setInputValue("");
     }
   };
-
-  // async function downloadImage(url1: string) {
-  //   console.log("this fun");
-  //   try {
-  //     const response = await fetch(
-  //       `/api/image?url=${encodeURIComponent(url1)}`
-  //     );
-
-  //     console.log("response from after the image.ts api", response);
-  //     const data = await response.blob();
-  //     const url = URL.createObjectURL(data);
-  //     const link = document.createElement("a");
-  //     console.log(url);
-  //     link.href = url;
-
-  //     link.download = "image.jpeg";
-  //     document.body.appendChild(link);
-  //     link.click();
-  //     document.body.removeChild(link);
-  //     URL.revokeObjectURL(url);
-  //   } catch (error) {
-  //     console.error("Error downloading reel:", error);
-  //   }
-  // }
 
   return (
     <div className="flex flex-col overflow-hidden justify-center items-center m-auto">
@@ -224,89 +204,28 @@ function Searchbar({}: Props) {
           </>
         )}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                {/* courosal constrution */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {imagedata === "" ? (
-          <>{/* <Loader /> */}</>
+        {courosaldata === "" ? (
+          <>{/* <Loader /> */}kdhdhf</>
         ) : (
           <>
-            <div className="w-[20rem] mt-8">
-              <div className="flex relative ">
-                <img
-                  className=" w-[100%] h-[18rem] brightness-110 saturate-100 blur-lg"
-                  src="easyblur.jpg"
-                  alt="images"
-                ></img>
-                <a
-                  href={
-                    imagedata.graphql.shortcode_media.display_resources[0].src +
-                    "&dl=1"
-                  }
-                >
-                  <button className="p-3 absolute top-[40%] left-[37%] bg-green-600">
-                    Preview
-                  </button>
-                </a>
-              </div>
+            <h1>
+              {
+                courosaldata.graphql.shortcode_media.edge_sidecar_to_children
+                  .edges[0].node.display_url
 
-              <a
-                href={
-                  imagedata.graphql.shortcode_media.display_resources[0].src +
-                  "&dl=1"
-                }
-              >
-                <button className="p-5  mt-3 ml-[5rem] bg-purple-600">
-                  Download Image
-                </button>
-              </a>
-            </div>
+              }
+            </h1>
+            {courosaldata.graphql.shortcode_media.edge_sidecar_to_children.edges.map(
+              (item: any) => {
+                <>
+                  <h1>shsshdgosdh</h1>
+                  <h1 className=" text-red-600 font-mono font-extrabold">
+                    saiyam {item.node.display_resources[0].src}
+                  </h1>
+                  <a href={item.node.display_url}>Download</a>
+                </>;
+              }
+            )}
           </>
         )}
       </div>
