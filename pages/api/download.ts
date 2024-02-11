@@ -7,6 +7,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (typeof url === 'string') {
     url = url.replace(/\?utm_source=ig_web_copy_link$/, '');
     url = url.replace(/\?hl=en$/, '');
+    url = url.replace(/\?igsh=MWNqM3Jkemx0ZGNpaA==$/, '');
     url = url.replace(/\/[^/]*$/, '');
     url = url + process.env.SECRET_KEY;
   }
@@ -21,6 +22,3 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     res.status(500).send('error');
   }
 }
-
-
-

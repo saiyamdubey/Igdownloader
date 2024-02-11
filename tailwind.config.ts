@@ -8,18 +8,21 @@ const config: Config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
+
   theme: {
     container: {
       center: true,
       padding: "2rem",
     },
+
     screens: {
-      'sm': {'min': '300px', 'max': '800px'},
-      'md': {'min': '800px', 'max': '1024px'},
+      'sm': {'min': '300px', 'max': '900px'},
+      'md': {'min': '901px', 'max': '1024px'},
       'lg': {'min': '1025px', 'max': '1279px'},
       'xl': {'min': '1280px', 'max': '1535px'},
       '2xl': {'min': '1536px'},
     },
+
     extend: {
       keyframes: {
         "accordion-down": {
@@ -31,10 +34,12 @@ const config: Config = {
           to: { height: "0" },
         },
       },
+
       animation: {
         "accordion-down": "accordion-down 0.5s ease-out",
         "accordion-up": "accordion-up 0.5s ease-out",
       },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
