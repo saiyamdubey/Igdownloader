@@ -84,9 +84,9 @@ function Searchbar({}: Props) {
       if (data.graphql.shortcode_media.__typename == "GraphVideo") {
         setimagedata("");
         setVideodata(data);
-      } else {
+      } else if (data.graphql.shortcode_media.__typename == "GraphSidecar") {
         setVideodata("");
-        setimagedata(data);
+        setimagedata("");
       }
     } catch (error) {
       toast("Check the Provided Link sir");
@@ -140,7 +140,7 @@ function Searchbar({}: Props) {
         </button>
         <div className="flex sm:flex-col sm:justify-center sm:items-center">
           <input
-            className="input 2xl:pl-32 sm:pl-20 min-h-10 w-[48rem] sm:w-[24rem] py-3 placeholder:text-base sm:placeholder:text-sm placeholder:font-mono border-2 border-black"
+            className="input 2xl:pl-32 sm:pl-20 min-h-10 w-[48rem] text-base sm:text-[14px] sm:w-[24rem] py-3 placeholder:text-base sm:placeholder:text-[14px] placeholder:font-thin border-2 border-black"
             id="text"
             name="text"
             type="text"
@@ -157,15 +157,15 @@ function Searchbar({}: Props) {
           />
         </div>
       </div>
-      <div className="downloadmediadata  h-fit w-[100%] flex justify-center flex-row items-center bg-gray-900 mt-8">
+      <div className="downloadmediadata  h-fit w-[100%] flex justify-center flex-row items-center bg-gray-900 light:bg-red-600 mt-8">
         {videodata === "" ? (
           <>{/* <Loader /> */}</>
         ) : (
           <>
-            <div className="w-[20rem] mt-8">
+            <div className="w-[20rem] mt-8 p-7 ">
               <div className="flex relative ">
                 <img
-                  className=" w-[100%] h-[18rem] brightness-110 saturate-200"
+                  className=" w-[100%] h-[18rem] brightness-110 saturate-200 blur-lg"
                   src="video.png"
                   alt="images"
                 ></img>
@@ -177,7 +177,7 @@ function Searchbar({}: Props) {
               </div>
 
               <a href={videodata.graphql.shortcode_media.video_url + "&dl=1"}>
-                <button className="p-5  mt-3 ml-[5rem] bg-purple-600">
+                <button className="p-5  mt-3 ml-[4rem] bg-purple-600">
                   Download Video
                 </button>
               </a>
@@ -192,7 +192,7 @@ function Searchbar({}: Props) {
             <div className="w-[20rem] mt-8">
               <div className="flex relative ">
                 <img
-                  className=" w-[100%] h-[18rem] brightness-110 saturate-100"
+                  className=" w-[100%] h-[18rem] brightness-110 saturate-100 blur-lg"
                   src="easyblur.jpg"
                   alt="images"
                 ></img>

@@ -14,8 +14,8 @@ const config: Config = {
       padding: "2rem",
     },
     screens: {
-      'sm': {'min': '360px', 'max': '600px'},
-      'md': {'min': '500px', 'max': '1024px'},
+      'sm': {'min': '300px', 'max': '800px'},
+      'md': {'min': '800px', 'max': '1024px'},
       'lg': {'min': '1025px', 'max': '1279px'},
       'xl': {'min': '1280px', 'max': '1535px'},
       '2xl': {'min': '1536px'},
