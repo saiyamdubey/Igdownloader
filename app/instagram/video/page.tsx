@@ -13,29 +13,6 @@ function Searchbar({}: Props) {
   const [imagedata, setimagedata] = useState<any>("");
   const [courosaldata, setcourosaldata] = useState<any>("");
   const [loading, setloading] = useState<boolean>(false);
-  // const [proxyImageUrl, setProxyImageUrl] = useState<string | null>(null);
-
-  // useEffect(() => {
-  //   if (videodata.data?.graphql?.shortcode_media?.display_resources?.[0]?.src) {
-  //     // handleFetchProxyImage(
-  //     //   videodata.data.graphql.shortcode_media.display_resources[0].src
-  //     // );
-  //   }
-  // }, [videodata]);
-
-  // const handleFetchProxyImage = async (imageUrl: string) => {
-  //   try {
-  //     const response = await fetch(
-  //       `/api/imagedown?imageUrl=${encodeURIComponent(imageUrl)}`
-  //     );
-  //     const data = await response.json();
-  //     if (data.imageUrlBase64) {
-  //       setProxyImageUrl(data.imageUrlBase64);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching proxy image:", error);
-  //   }
-  // };
 
   const handleDownload = () => {
     setloading(true);
@@ -45,6 +22,7 @@ function Searchbar({}: Props) {
   async function downloadReel(url: string) {
     try {
       if (url.startsWith("https://instagram.com/")) {
+        setloading(false);
         return toast("Check the Provided Link");
       }
 
@@ -55,7 +33,8 @@ function Searchbar({}: Props) {
       console.log(data);
 
       if (data === "link is wrong") {
-        console.log("hello");
+        // console.log("hello");
+        setloading(false);
         toast("Check the Provided Link");
       }
       if (data.graphql.shortcode_media.__typename === "GraphVideo") {
@@ -71,10 +50,17 @@ function Searchbar({}: Props) {
       } else if (data.graphql.shortcode_media.__typename === "GraphSidecar") {
         setVideodata("");
         setimagedata("");
-        setcourosaldata(data);
+        setcourosaldata(
+          data.graphql.shortcode_media.edge_sidecar_to_children.edges
+        );
+        console.log(
+          "courosaldta",
+          data.graphql.shortcode_media.edge_sidecar_to_children.edges
+        );
         setloading(false);
       }
     } catch (error) {
+      setloading(false);
       toast("Check the Provided Link 👀");
     }
   }
@@ -120,10 +106,10 @@ function Searchbar({}: Props) {
         </div>
       </div>
 
-      <div className="loading w-[100%] h-36 flex justify-center items-center ">
+      <div className="loading w-[100%] h-fit  flex justify-center items-center ">
         {loading === true ? (
           <>
-            <div>
+            <div className=" flex justify-center items-center h-24 mt-10">
               <Loader />
             </div>
           </>
@@ -146,22 +132,22 @@ function Searchbar({}: Props) {
           <>{/* <Loader /> */}</>
         ) : (
           <>
-            <div className="w-[20rem] mt-8 p-7 ">
+            <div className="w-[24rem] mt-8 p-7 ">
               <div className="flex relative ">
                 <img
-                  className=" w-[100%] h-[18rem] brightness-110 saturate-200 blur-lg"
+                  className=" w-[100%] h-[18rem] brightness-110 saturate-100 blur-sm"
                   src="video.png"
                   alt="images"
                 ></img>
                 <a href={videodata.graphql.shortcode_media.video_url + "&dl=1"}>
-                  <button className="p-3 absolute top-[40%] left-[37%] bg-green-600">
+                  <button className="p-3 rounded-lg absolute top-[40%] left-[40%] bg-green-600">
                     Preview
                   </button>
                 </a>
               </div>
 
               <a href={videodata.graphql.shortcode_media.video_url + "&dl=1"}>
-                <button className="p-5  mt-3 ml-[4rem] bg-purple-600">
+                <button className="p-3 rounded-lg  mt-3 ml-[6rem] bg-purple-600">
                   Download Video
                 </button>
               </a>
@@ -176,7 +162,7 @@ function Searchbar({}: Props) {
             <div className="w-[20rem] mt-8">
               <div className="flex relative ">
                 <img
-                  className=" w-[100%] h-[18rem] brightness-110 saturate-100 blur-lg"
+                  className=" w-[100%] h-[18rem] brightness-110 saturate-100 blur-sm"
                   src="easyblur.jpg"
                   alt="images"
                 ></img>
@@ -186,7 +172,7 @@ function Searchbar({}: Props) {
                     "&dl=1"
                   }
                 >
-                  <button className="p-3 absolute top-[40%] left-[37%] bg-green-600">
+                  <button className="p-3 rounded-lg absolute top-[40%] left-[36%] bg-green-600">
                     Preview
                   </button>
                 </a>
@@ -198,7 +184,7 @@ function Searchbar({}: Props) {
                   "&dl=1"
                 }
               >
-                <button className="p-5  mt-3 ml-[5rem] bg-purple-600">
+                <button className="p-3 rounded-lg mt-3 ml-[5.6rem] bg-purple-600">
                   Download Image
                 </button>
               </a>
@@ -207,27 +193,32 @@ function Searchbar({}: Props) {
         )}
 
         {courosaldata === "" ? (
-          <>{/* <Loader /> */}kdhdhf</>
+          <>{/* <Loader /> */}</>
         ) : (
-          <>
-            <h1>
-              {
-                courosaldata.graphql.shortcode_media.edge_sidecar_to_children
-                  .edges[0].node.display_url
-              }
-            </h1>
-            {courosaldata.graphql.shortcode_media.edge_sidecar_to_children.edges.map(
-              (item: any) => {
-                <>
-                  <h1>shsshdgosdh</h1>
-                  <h1 className=" text-red-600 font-mono font-extrabold">
-                    saiyam {item.node.display_resources[0].src}
-                  </h1>
-                  <a href={item.node.display_url}>Download</a>
-                </>;
-              }
-            )}
-          </>
+          <div className="flex flex-wrap gap-8 items-center justify-center p-5">
+            {courosaldata.map((item: any) => (
+              <div className="w-[20rem] mt-8">
+                <div className="flex relative ">
+                  <img
+                    className="w-[100%] h-[18rem] brightness-110 saturate-100 blur-sm"
+                    src="easyblur.jpg"
+                    alt="images"
+                  />
+                  <a href={item.node.display_url + "&dl=1"}>
+                    <button className="p-3 rounded-lg absolute top-[40%] left-[36%] bg-green-600">
+                      Preview
+                    </button>
+                  </a>
+                </div>
+
+                <a href={item.node.display_url + "&dl=1"}>
+                  <button className="p-3 rounded-lg mt-3 ml-[5.5rem] bg-purple-600">
+                    Download Image
+                  </button>
+                </a>
+              </div>
+            ))}
+          </div>
         )}
       </div>
     </div>

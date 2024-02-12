@@ -1,65 +1,22 @@
 import React from "react";
 
-const Loader = () => {
+const Loader: React.FC = () => {
   return (
-    <>
-      <div
-        className="inline-block h-fit w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-primary motion-reduce:animate-[spin_1.5s_linear_infinite]"
-        role="status"
-      >
-        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-          Loading...
-        </span>
-      </div>
-      <div
-        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-secondary motion-reduce:animate-[spin_1.5s_linear_infinite]"
-        role="status"
-      >
-        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-          Loading...
-        </span>
-      </div>
-      <div
-        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-success motion-reduce:animate-[spin_1.5s_linear_infinite]"
-        role="status"
-      >
-        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-          Loading...
-        </span>
-      </div>
-      <div
-        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-danger motion-reduce:animate-[spin_1.5s_linear_infinite]"
-        role="status"
-      >
-        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-          Loading...
-        </span>
-      </div>
-      <div
-        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-warning motion-reduce:animate-[spin_1.5s_linear_infinite]"
-        role="status"
-      >
-        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-          Loading...
-        </span>
-      </div>
-      <div
-        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-info motion-reduce:animate-[spin_1.5s_linear_infinite]"
-        role="status"
-      >
-        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-          Loading...
-        </span>
-      </div>
-      <div
-        className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] text-neutral-100 motion-reduce:animate-[spin_1.5s_linear_infinite]"
-        role="status"
-      >
-        <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
-          Loading...
-        </span>
-      </div>
-    </>
+    // <div className="flex flex-row gap-2 h-fit ">
+    //   <div className="w-8 h-8 rounded-full bg-red-600 animate-ping"></div>
+    //   <div className="w-8 h-8 rounded-full bg-blue-600 animate-ping [animation-delay:-.3s]"></div>
+    //   <div className="w-8 h-8 rounded-full bg-purple-600 animate-ping [animation-delay:-.6s]"></div>
+    //   <div className="w-8 h-8 rounded-full bg-blue-600 animate-ping [animation-delay:-.9s]"></div>
+    //   <div className="w-8 h-8 rounded-full bg-red-600 animate-ping [animation-delay:-1s]"></div>
+    // </div>
+    <div className="flex flex-row gap-2">
+      <div className="w-8 h-15 bg-blue-700 animate-spin  [animation-delay:-0.0s]"></div>
+      <div className="w-8 h-15  bg-blue-700 animate-spin [animation-delay:-0.3s]"></div>
+      <div className="w-8 h-15  bg-blue-700 animate-spin [animation-delay:-0.5s]"></div>
+      <div className="w-8 h-15 bg-blue-700 animate-spin [animation-delay:-0.7s]"></div>
+      <div className="w-8 h-15  bg-blue-700 animate-spin [animation-delay:-0.9s]"></div>
+      <div className="w-8 h-15  bg-blue-700 animate-spin [animation-delay:-1.1s]"></div>
+    </div>
   );
 };
 

@@ -13,18 +13,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    // console.log("hello")
 
-    // console.log(url)
-
-    // console.log(process.env.SECRET_KEY)
     const response = await fetch(url as string);
-    // console.log(response)
 
     const data = await response.json();
     res.status(200).send(data);
   } catch (error) {
-    // console.error('error', error);
     res.status(500).send('error');
   }
 }
