@@ -3,6 +3,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
+import Loader from "../loader";
 
 type Props = {};
 
@@ -11,6 +12,7 @@ function Searchbar({}: Props) {
   const [videodata, setVideodata] = useState<any>("");
   const [imagedata, setimagedata] = useState<any>("");
   const [courosaldata, setcourosaldata] = useState<any>("");
+  const [loading, setloading] = useState<boolean>(false);
   // const [proxyImageUrl, setProxyImageUrl] = useState<string | null>(null);
 
   // useEffect(() => {
@@ -36,6 +38,7 @@ function Searchbar({}: Props) {
   // };
 
   const handleDownload = () => {
+    setloading(true);
     downloadReel(inputValue);
   };
 
@@ -84,14 +87,18 @@ function Searchbar({}: Props) {
       if (data.graphql.shortcode_media.__typename === "GraphVideo") {
         setimagedata("");
         setVideodata(data);
-      } else if (data.graphql.shortcode_media.__typename === "GraphImage") {
-        setVideodata("");
-        setimagedata(data);
         setcourosaldata("");
+        setloading(false);
+      } else if (data.graphql.shortcode_media.__typename === "GraphImage") {
+        setimagedata(data);
+        setVideodata("");
+        setcourosaldata("");
+        setloading(false);
       } else if (data.graphql.shortcode_media.__typename === "GraphSidecar") {
         setVideodata("");
         setimagedata("");
         setcourosaldata(data);
+        setloading(false);
       }
     } catch (error) {
       toast("Check the Provided Link 👀");
@@ -138,7 +145,29 @@ function Searchbar({}: Props) {
           />
         </div>
       </div>
+
+      <div className="loading w-[100%] h-36 flex justify-center items-center ">
+        {loading === true ? (
+          <>
+            <div>
+              <Loader />
+            </div>
+          </>
+        ) : (
+          ""
+        )}
+      </div>
       <div className="downloadmediadata  h-fit w-[100%] flex justify-center flex-row items-center bg-gray-900 light:bg-red-600 mt-8">
+        {/* {loading === true ? (
+          <>
+            <div>
+              <Loader />
+            </div>
+          </>
+        ) : (
+          ""
+        )} */}
+
         {videodata === "" ? (
           <>{/* <Loader /> */}</>
         ) : (
