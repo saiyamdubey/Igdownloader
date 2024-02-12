@@ -42,32 +42,6 @@ function Searchbar({}: Props) {
     downloadReel(inputValue);
   };
 
-  // async function downloadReel(url: string) {
-  //   try {
-  //     if (url.startsWith("https://instagram.com/")) {
-  //       return toast("Check the Provided Link");
-  //     }
-  //     const response = await fetch(
-  //       `/api/download?url=${encodeURIComponent(url)}`
-  //     );
-
-  //     const data = await response.json();
-  //     console.log(data);
-  //     setVideodata(data);
-  //     if (data.error === "link is wrong") {
-  //       console.log("hello");
-  //       toast("Check the Provided Link");
-  //     } else if (data.graphql.shortcode_media.__typename == "GraphVideo") {
-  //       setimagedata("");
-  //       setVideodata(data);
-  //     } else {
-  //       setVideodata("");
-  //       setimagedata(data);
-  //     }
-  //   } catch (error) {
-  //     toast("Check the Provided Link");
-  //   }
-  // }
   async function downloadReel(url: string) {
     try {
       if (url.startsWith("https://instagram.com/")) {
