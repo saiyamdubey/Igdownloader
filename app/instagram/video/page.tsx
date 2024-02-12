@@ -196,28 +196,34 @@ function Searchbar({}: Props) {
           <>{/* <Loader /> */}</>
         ) : (
           <div className="flex flex-wrap gap-8 items-center justify-center p-5">
-            {courosaldata.map((item: any) => (
-              <div className="w-[20rem] mt-8">
-                <div className="flex relative ">
-                  <img
-                    className="w-[100%] h-[18rem] brightness-110 saturate-100 blur-sm"
-                    src="easyblur.jpg"
-                    alt="images"
-                  />
+            {courosaldata.map(
+              (
+                item: any,
+                index: number 
+              ) => (
+                <div key={index} className="w-[20rem] mt-8">
+                  {" "}
+                  {/* Added 'key' prop */}
+                  <div className="flex relative ">
+                    <img
+                      className="w-[100%] h-[18rem] brightness-110 saturate-100 blur-sm"
+                      src="easyblur.jpg"
+                      alt="images"
+                    />
+                    <a href={item.node.display_url + "&dl=1"}>
+                      <button className="p-3 rounded-lg absolute top-[40%] left-[36%] bg-green-600">
+                        Preview
+                      </button>
+                    </a>
+                  </div>
                   <a href={item.node.display_url + "&dl=1"}>
-                    <button className="p-3 rounded-lg absolute top-[40%] left-[36%] bg-green-600">
-                      Preview
+                    <button className="p-3 rounded-lg mt-3 ml-[5.5rem] bg-purple-600">
+                      Download Image
                     </button>
                   </a>
                 </div>
-
-                <a href={item.node.display_url + "&dl=1"}>
-                  <button className="p-3 rounded-lg mt-3 ml-[5.5rem] bg-purple-600">
-                    Download Image
-                  </button>
-                </a>
-              </div>
-            ))}
+              )
+            )}
           </div>
         )}
       </div>
