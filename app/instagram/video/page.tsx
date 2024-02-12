@@ -3,7 +3,6 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
-import Loader from "@/app/instagram/loader";
 
 type Props = {};
 
