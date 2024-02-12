@@ -212,7 +212,6 @@ function Searchbar({}: Props) {
               {
                 courosaldata.graphql.shortcode_media.edge_sidecar_to_children
                   .edges[0].node.display_url
-
               }
             </h1>
             {courosaldata.graphql.shortcode_media.edge_sidecar_to_children.edges.map(
