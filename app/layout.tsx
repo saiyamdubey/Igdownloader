@@ -21,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <body className="font-serif overflow-x-hidden">
         <ThemeProvider
           attribute="class"
