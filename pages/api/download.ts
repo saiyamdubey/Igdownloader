@@ -14,10 +14,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-console.log("hello1")
-    const response = await axios.get(url as string);
-    console.log(response.data)
-    const data = response.data;
+    console.log("hello1")
+    const response = await fetch(url as string);
+    console.log(response.json())
+    const data = response.json();
     res.status(200).send(data);
   } catch (error) {
     res.status(500).send('error');
