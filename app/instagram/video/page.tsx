@@ -34,7 +34,6 @@ function Searchbar({}: Props) {
       console.log(data);
 
       if (data === "link is wrong") {
-        // console.log("hello");
         setloading(false);
         toast("Check the Provided Link");
       }
