@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
 import Loader from "../loader";
@@ -29,6 +29,7 @@ function Searchbar({}: Props) {
       const response = await fetch(
         `/api/download?url=${encodeURIComponent(url)}`
       );
+      console.log(response);
       const data = await response.json();
       console.log(data);
 
@@ -100,7 +101,7 @@ function Searchbar({}: Props) {
           <input
             onClick={handleDownload}
             className="button--submit border-2 sm:mt-5 sm:w-[10rem] min-h-10 rounded-r-[3px] sm:rounded-[18px] px-4 py-3 bg-black text-white text-base cursor-pointer border-black ease-in-out bg-gradient-to-r from-red-700  to-pink-500 hover:from-pink-600 hover:to-red-600"
-            value="Search"
+            value="Download"
             type="button"
           />
         </div>
@@ -196,34 +197,29 @@ function Searchbar({}: Props) {
           <>{/* <Loader /> */}</>
         ) : (
           <div className="flex flex-wrap gap-8 items-center justify-center p-5">
-            {courosaldata.map(
-              (
-                item: any,
-                index: number 
-              ) => (
-                <div key={index} className="w-[20rem] mt-8">
-                  {" "}
-                  {/* Added 'key' prop */}
-                  <div className="flex relative ">
-                    <img
-                      className="w-[100%] h-[18rem] brightness-110 saturate-100 blur-sm"
-                      src="easyblur.jpg"
-                      alt="images"
-                    />
-                    <a href={item.node.display_url + "&dl=1"}>
-                      <button className="p-3 rounded-lg absolute top-[40%] left-[36%] bg-green-600">
-                        Preview
-                      </button>
-                    </a>
-                  </div>
+            {courosaldata.map((item: any, index: number) => (
+              <div key={index} className="w-[20rem] mt-8">
+                {" "}
+                {/* Added 'key' prop */}
+                <div className="flex relative ">
+                  <img
+                    className="w-[100%] h-[18rem] brightness-110 saturate-100 blur-sm"
+                    src="easyblur.jpg"
+                    alt="images"
+                  />
                   <a href={item.node.display_url + "&dl=1"}>
-                    <button className="p-3 rounded-lg mt-3 ml-[5.5rem] bg-purple-600">
-                      Download Image
+                    <button className="p-3 rounded-lg absolute top-[40%] left-[36%] bg-green-600">
+                      Preview
                     </button>
                   </a>
                 </div>
-              )
-            )}
+                <a href={item.node.display_url + "&dl=1"}>
+                  <button className="p-3 rounded-lg mt-3 ml-[5.5rem] bg-purple-600">
+                    Download Image
+                  </button>
+                </a>
+              </div>
+            ))}
           </div>
         )}
       </div>
