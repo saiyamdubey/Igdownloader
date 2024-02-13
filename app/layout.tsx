@@ -7,6 +7,9 @@ import Description from "./instagram/description";
 import Hero from "@/components/hero";
 import Searchbar from "./instagram/video/page";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/react";
+
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title:
@@ -32,6 +35,8 @@ export default function RootLayout({
           <Navbar />
           <Hero />
           {children}
+          <Analytics />
+          <SpeedInsights />
           <Toaster />
           <Searchbar />
           <Description />
