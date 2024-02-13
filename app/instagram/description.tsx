@@ -14,7 +14,7 @@ function Description({}: Props) {
       <div className=" max-w-full 2xl:w-[90%] 2xl:m-auto overflow-hidden">
         <div className="py-10 px-4 ">
           <h1 className="2xl:text-5xl sm:text-2xl font-serif sm:font-extrabold font-thin text-center  my-8 bg-clip-text text-transparent bg-gradient-to-r from-blue-700 via-purple-500 via-pink-400 to-red-800 hover:from-yellow-400 hover:via-yellow-500 hover:to-green-500">
-            Instagram Downloader App
+            Instagram Downloader 
           </h1>
           <div className="px-2 mx-auto">
             <p className=" sm:text-[15px] text-2xl  text-justify mb-6">
