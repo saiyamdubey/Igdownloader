@@ -19,8 +19,8 @@ const config: Config = {
       'sm': {'min': '300px', 'max': '900px'},
       'md': {'min': '901px', 'max': '1024px'},
       'lg': {'min': '1025px', 'max': '1279px'},
-      'xl': {'min': '1280px', 'max': '1535px'},
-      '2xl': {'min': '1536px'},
+      'xl': {'min': '1280px', 'max': '1400px'},
+      '2xl': {'min': '1401px',"max":"1900px"},
     },
 
     extend: {

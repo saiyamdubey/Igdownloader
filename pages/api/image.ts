@@ -162,23 +162,23 @@
 
 
 
-import request from "request"; 
-import { NextApiRequest, NextApiResponse } from 'next';
+// import request from "request"; 
+// import { NextApiRequest, NextApiResponse } from 'next';
 
-function download(res: NextApiResponse, url: string,extension : string) {
-  request(url,{encoding:null},(error,response,body)=>{
-    if(error){
-      res.status(404).send("saiyam dubey")
-      return ;
-    }
+// function download(res: NextApiResponse, url: string,extension : string) {
+//   request(url,{encoding:null},(error,response,body)=>{
+//     if(error){
+//       res.status(404).send("saiyam dubey")
+//       return ;
+//     }
 
-    const filename = Date.now() + "." + extension;
-    res.setHeader('Content-Type', 'octet-stream');
-    res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
-    res.send(body);
-  })
+//     const filename = Date.now() + "." + extension;
+//     res.setHeader('Content-Type', 'octet-stream');
+//     res.setHeader('Content-Disposition', `attachment; filename=${filename}`);
+//     res.send(body);
+//   })
   
-};
+// };
 
 // export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 //   const { url } = req.query as { url: string };
