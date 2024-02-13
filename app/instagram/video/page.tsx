@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
 import Loader from "../loader";
+import axios from "axios";
 
 type Props = {};
 
@@ -26,11 +27,11 @@ function Searchbar({}: Props) {
         return toast("Check the Provided Link");
       }
 
-      const response = await fetch(
+      const response = await axios.get(
         `/api/download?url=${encodeURIComponent(url)}`
       );
       console.log(response);
-      const data = await response.json();
+      const data = response.data;
       console.log(data);
 
       if (data === "link is wrong") {

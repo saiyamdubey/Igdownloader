@@ -1,6 +1,6 @@
 
 import { NextApiRequest, NextApiResponse } from 'next';
-// import axios from 'axios';
+import axios from 'axios';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   let { url } = req.query;
 
@@ -14,10 +14,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-console.log("hello")
-    const response = await fetch(url as string);
-
-    const data = await response.json();
+console.log("hello1")
+    const response = await axios.get(url as string);
+    console.log(response.data)
+    const data = response.data;
     res.status(200).send(data);
   } catch (error) {
     res.status(500).send('error');
