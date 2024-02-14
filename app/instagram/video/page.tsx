@@ -27,13 +27,14 @@ function Searchbar({}: Props) {
       }
 
       const response = await fetch(
-        `/api/download?url=${encodeURIComponent(url)}`
+        // `/api/download?url=${encodeURIComponent(url)}`
+        `/api/test?url=${encodeURIComponent("https://www.instagram.com/p/C3PvQIrCwzz/?__a=1&__d=dis")}`
       );
-      console.log("hmm ::", response);
+      // console.log("hmm ::", await response.json());
       const data = await response.json();
-      console.log(data);
+      console.log("mm ::", data);
       const response1 = await fetch(
-        `/api/test?url=https://jsonplaceholder.typicode.com/posts`
+        `/api/test?url=https://jsonplaceholder.typicode.com/posts/1`
       );
       const posts = await response1.json();
       console.log("hi ::", posts);
