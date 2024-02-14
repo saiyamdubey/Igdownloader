@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
 import Loader from "../../../components/loader";
-import axios from "axios";
 
 type Props = {};
 
@@ -28,21 +27,16 @@ function Searchbar({}: Props) {
       }
 
       const response = await fetch(
-        `/api/download?url=${encodeURIComponent(url)}`,
-        {
-          cache: "no-cache",
-        }
+        `/api/download?url=${encodeURIComponent(url)}`
       );
-      console.log(response);
+      console.log("hmm ::", response);
       const data = await response.json();
       console.log(data);
       const response1 = await fetch(
-        `/api/test?url=https://jsonplaceholder.typicode.com/posts`,
-        {
-          cache: "no-store",
-        }
+        `/api/test?url=https://jsonplaceholder.typicode.com/posts`
       );
-      console.log("hi ::",await response1.json());
+      const posts = await response1.json();
+      console.log("hi ::", posts);
       if (data === "link is wrong") {
         setloading(false);
         toast("Check the Provided Link");
