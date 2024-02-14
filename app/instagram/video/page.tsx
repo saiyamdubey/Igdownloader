@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
-import Loader from "../loader";
+import Loader from "../../../components/loader";
 import axios from "axios";
 
 type Props = {};
@@ -27,16 +27,22 @@ function Searchbar({}: Props) {
         return toast("Check the Provided Link");
       }
 
-      const response = await axios.get(
-        `/api/download?url=${encodeURIComponent(url)}`
+      const response = await fetch(
+        `/api/download?url=${encodeURIComponent(url)}`,
+        {
+          cache: "no-cache",
+        }
       );
       console.log(response);
-      const data = response.data;
+      const data = await response.json();
       console.log(data);
-      const response1 = await axios.get(
-        `/api/test?url=https://jsonplaceholder.typicode.com/posts`
+      const response1 = await fetch(
+        `/api/test?url=https://jsonplaceholder.typicode.com/posts`,
+        {
+          cache: "no-store",
+        }
       );
-      console.log(response1.data)
+      console.log("hi ::",await response1.json());
       if (data === "link is wrong") {
         setloading(false);
         toast("Check the Provided Link");
