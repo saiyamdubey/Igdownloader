@@ -33,7 +33,10 @@ function Searchbar({}: Props) {
       console.log(response);
       const data = response.data;
       console.log(data);
-
+      const response1 = await axios.get(
+        `/api/test?url=https://jsonplaceholder.typicode.com/posts`
+      );
+      console.log(response1.data)
       if (data === "link is wrong") {
         setloading(false);
         toast("Check the Provided Link");
