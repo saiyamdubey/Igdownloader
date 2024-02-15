@@ -45,7 +45,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   try {
     const response = await fetch(url as string);
 
-    const data =await  response.json();
+    const data = await response.json();
     console.log("dtayvs:: ",data)
     res.status(200).json(data);
   } catch (error) {
