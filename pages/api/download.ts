@@ -27,6 +27,9 @@
 
 import { NextApiRequest, NextApiResponse } from 'next';
 
+export const dynamic = 'force-dynamic';
+
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   let { url } = req.query;
 
