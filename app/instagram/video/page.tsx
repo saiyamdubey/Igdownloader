@@ -5,7 +5,11 @@ import { GoPaste } from "react-icons/go";
 import { toast } from "sonner";
 import Loader from "../../../components/loader";
 
+
+
 type Props = {};
+
+// IGQWRPdzBCVld0SFdDZA0FkV01pSFRneF9FZAENqcWdJU25PbTZAEQzVXRkRLSDhWY0NVZAzNIQ0tOWF9wZAlBlTW5QQUllc1Nqbm15WDlDdzE0S0FubG1tMEpSLXFiNE9fU19iV3ZAaT3B1WW5hOUlWUS1PY1RfcnBjR2MZD
 
 function Searchbar({}: Props) {
   const [inputValue, setInputValue] = useState("");
@@ -32,11 +36,11 @@ function Searchbar({}: Props) {
       const data = await response.json();
       console.log("mm ::", data);
 
-      // const response1 = await fetch(
-      //   `/api/test?url=https://jsonplaceholder.typicode.com/posts/`
-      // );
-      // const posts = await response1.json();
-      // console.log("hi ::", posts);
+
+      // const urldata = await fetch (https://graph.instagram.com/{api-version}/{user-id})
+      // ?fields={fields}
+      // &access_token={access-token}
+
 
       if (data === "link is wrong") {
         setloading(false);

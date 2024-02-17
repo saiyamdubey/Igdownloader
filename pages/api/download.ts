@@ -38,7 +38,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     url = url.replace(/\?hl=en$/, '');
     url = url.replace(/\?igsh=MWNqM3Jkemx0ZGNpaA==$/, '');
     url = url.replace(/\/[^/]*$/, '');
-    url = url + "/?__a=1&__d=dis";
+    url = url + process.env.SECRET_KEY;
     console.log(url)
   }
 
