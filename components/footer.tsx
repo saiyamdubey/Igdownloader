@@ -29,7 +29,7 @@ export default function Footer() {
             </h3>
           </Link>
           <p className="my-8 text-xs 2xl:text-[16px] text-justify text-gray-400 leading-5">
-            Saiyam Dubey (Devloper 🙊) : I am Working on this site just for the
+            Madhusudan Tripathi (Devloper 🙊) : I am Working on this site just for the
             Educational purpose , I also want you to contribute on this site on
             my Github Repository which is mentioned on the page of my github
             (saiyamdubey).. 💖
